@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ExternalLink } from 'lucide-react';
 import Gallery from './Gallery';
@@ -171,7 +170,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
 
   return (
     <div className="mb-8">
-      <div className="space-y-2 font-mono">
+      <div className={`space-y-2 font-mono ${section === 'treatise' ? 'max-w-[50%]' : ''}`}>
         {content.slice(0, visibleLines).map((line, index) => renderLine(line, index)).filter(Boolean)}
         {visibleLines < content.length && (
           <div className="text-terminal-blue animate-blink">▓</div>
