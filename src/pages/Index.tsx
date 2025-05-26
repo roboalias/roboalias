@@ -124,26 +124,20 @@ const Index = () => {
     mentorship: [
       'President of the L.A. Philanthropic Alumni Chapter at Lancaster University',
       'https://www.lancaster.ac.uk',
-      '',
       'Startup Mentor at Singularity University',
       'https://su.org',
-      '',
       'Startup Mentor at Founder Institute',
       'https://fi.co',
-      '',
       'Startup Mentor at National Incubation Centre',
-      'https://nicpakistan.pk',
-      '',
+      'https://nicislamabad.com',
       'Startup Mentor at Wayra',
       'https://wayra.com'
     ],
     awards: [
       'EB1A Alien of Extraordinary Abilities (2019)',
       'https://en.wikipedia.org/wiki/Alien_of_extraordinary_ability',
-      '',
       'UK Tech Nation Exceptional Talent (2015)',
       'https://www.gov.uk/global-talent-digital-technology/eligibility',
-      '',
       'Top 100 Asian Stars in UK Tech (2015)',
       'https://asiansintech.com/top-100-asian-stars-uk-tech-2015/'
     ],
