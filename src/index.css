@@ -90,7 +90,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-mono;
+    @apply bg-background text-foreground;
+    font-family: 'Chakra Petch', monospace;
   }
 }
 

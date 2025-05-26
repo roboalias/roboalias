@@ -19,7 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'mono': ['Antikor Mono', 'JetBrains Mono', 'monospace'],
+				'mono': ['Chakra Petch', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
