@@ -12,18 +12,6 @@ import { Card } from "@/components/ui/card";
 const Gallery = () => {
   const images = [
     {
-      src: "/lovable-uploads/03297fbb-75e3-4a12-b890-6682fbc2de36.png",
-      alt: "Ali Ahmed with Robomart self-driving store at exhibition"
-    },
-    {
-      src: "/lovable-uploads/70f066ee-b896-4505-89f7-e841488d269e.png",
-      alt: "Robomart team with autonomous vehicle at museum display"
-    },
-    {
-      src: "/lovable-uploads/eb13e1e9-3c65-4828-9235-3ceadeeb21c7.png",
-      alt: "Award ceremony with $5,000 prize check for Robomart"
-    },
-    {
       src: "/lovable-uploads/242b7aba-aaef-47e8-a894-fe99fb2edfb7.png",
       alt: "Ali Ahmed presenting at Groceryshop conference"
     },
@@ -58,6 +46,18 @@ const Gallery = () => {
     {
       src: "/lovable-uploads/5c3bbea4-de15-4706-88c0-80226c9983bb.png",
       alt: "Robomart team photo with autonomous vehicle"
+    },
+    {
+      src: "/lovable-uploads/03297fbb-75e3-4a12-b890-6682fbc2de36.png",
+      alt: "Ali Ahmed with Robomart self-driving store at exhibition"
+    },
+    {
+      src: "/lovable-uploads/70f066ee-b896-4505-89f7-e841488d269e.png",
+      alt: "Robomart team with autonomous vehicle at museum display"
+    },
+    {
+      src: "/lovable-uploads/eb13e1e9-3c65-4828-9235-3ceadeeb21c7.png",
+      alt: "Award ceremony with $5,000 prize check for Robomart"
     }
   ];
 
