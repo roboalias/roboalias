@@ -89,9 +89,6 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
 
   return (
     <div className="mb-8">
-      <div className="text-terminal-blue text-sm mb-4 font-mono">
-        <span className="text-terminal-gray">~/</span>roboticali <span className="text-terminal-gray">&gt;</span> {section.toLowerCase()}
-      </div>
       <div className="space-y-2 font-mono">
         {content.slice(0, visibleLines).map((line, index) => renderLine(line, index)).filter(Boolean)}
         {visibleLines < content.length && (

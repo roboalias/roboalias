@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import TerminalHeader from '@/components/TerminalHeader';
 import NavigationMenu from '@/components/NavigationMenu';
@@ -207,7 +208,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white text-foreground p-6 md:p-12 max-w-6xl mx-auto">
       <div onClick={handleTerminalClick} className="cursor-pointer">
-        <TerminalHeader />
+        <TerminalHeader activeSection={activeSection} />
       </div>
       
       <NavigationMenu 
