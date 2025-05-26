@@ -6,7 +6,7 @@ import ContentSection from '@/components/ContentSection';
 const Index = () => {
   const sections = [
     'bio', 'startups', 'treatise', 'publications', 'patents',
-    'talks', 'interviews', 'features', 'mentorship', 'awards', 'gallery', 'contact'
+    'talks', 'interviews', 'mentorship', 'awards', 'gallery', 'contact'
   ];
 
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -18,7 +18,12 @@ const Index = () => {
       'Roboticist & inventor of the self-driving store.',
       'Author of Systema Robotica.',
       'Robotics expert to Wefunder.',
-      'Mentor and angel investor in robotics startups.',
+      'Angel investor in robotics startups.',
+      'Startup mentor at SU, FI, NIC, Wayra.',
+      'https://su.org',
+      'https://fi.co',
+      'https://nicislamabad.com',
+      'https://wayra.com',
       '',
       'PhD Dropout. Double Masters MSc + MBA.',
       'Management, Computing, Design, Marketing.'
