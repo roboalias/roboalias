@@ -50,7 +50,6 @@ const Index = () => {
     ],
     treatise: [
       'Systema Robotica',
-      '/lovable-uploads/281aeea0-3035-4fba-b3dc-097d4cb81ead.png',
       '',
       'A treatise on the order and evolution of robotkind',
       'that serves as humanity\'s guide to a better understanding and',
@@ -65,7 +64,9 @@ const Index = () => {
       'Amazon',
       'https://www.amazon.com/dp/B0DBHB22GM',
       'Audible',
-      'https://www.audible.com/pd/Systema-Robotica-Audiobook/B0DG6XFN1V'
+      'https://www.audible.com/pd/Systema-Robotica-Audiobook/B0DG6XFN1V',
+      '',
+      '/lovable-uploads/281aeea0-3035-4fba-b3dc-097d4cb81ead.png'
     ],
     patents: [
       'One tap/command grocery ordering via self-driving mini marts (granted)',

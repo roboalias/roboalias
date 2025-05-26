@@ -13,9 +13,11 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const images = [
     {
@@ -80,14 +82,32 @@ const Gallery = () => {
     }
   ];
 
+  const handleImageClick = (index: number) => {
+    setSelectedImageIndex(index);
+  };
+
+  const handlePrevious = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex(selectedImageIndex > 0 ? selectedImageIndex - 1 : images.length - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex(selectedImageIndex < images.length - 1 ? selectedImageIndex + 1 : 0);
+    }
+  };
+
+  const currentImage = selectedImageIndex !== null ? images[selectedImageIndex] : null;
+
   return (
     <div className="space-y-6 max-w-3xl">
       {/* Responsive grid: single column on mobile, three columns on desktop */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         {images.map((image, index) => (
-          <Dialog key={index}>
+          <Dialog key={index} open={selectedImageIndex === index} onOpenChange={(open) => !open && setSelectedImageIndex(null)}>
             <DialogTrigger asChild>
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onClick={() => handleImageClick(index)}>
                 <AspectRatio ratio={4/3}>
                   <img
                     src={image.src}
@@ -98,11 +118,37 @@ const Gallery = () => {
               </Card>
             </DialogTrigger>
             <DialogContent className="max-w-4xl w-full">
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
-              />
+              <div className="relative">
+                <img
+                  src={currentImage?.src}
+                  alt={currentImage?.alt}
+                  className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+                />
+                
+                {/* Navigation buttons */}
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white"
+                  onClick={handlePrevious}
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white"
+                  onClick={handleNext}
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+                
+                {/* Image counter */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                  {selectedImageIndex !== null ? selectedImageIndex + 1 : 0} / {images.length}
+                </div>
+              </div>
             </DialogContent>
           </Dialog>
         ))}
