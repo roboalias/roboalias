@@ -6,7 +6,7 @@ import ContentSection from '@/components/ContentSection';
 const Index = () => {
   const sections = [
     'bio', 'startups', 'publications',
-    'talks', 'media', 'mentorship', 'awards', 'gallery', 'contact'
+    'speaking', 'media', 'mentorship', 'awards', 'gallery', 'contact'
   ];
 
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -81,7 +81,7 @@ const Index = () => {
       'Crowdfunding your startup: a founder\'s perspective',
       'https://www.uktech.news/need-to-know-2/crowdfunding-your-tech-startup-founders-perspective-20140213'
     ],
-    talks: [
+    speaking: [
       'Shoptalk 2018',
       'https://youtu.be/TuzNpVBF5Ak',
       'Groceryshop 2019',
