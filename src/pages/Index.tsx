@@ -5,7 +5,7 @@ import ContentSection from '@/components/ContentSection';
 
 const Index = () => {
   const sections = [
-    'bio', 'startups', 'treatise', 'publications', 'patents', 'contributions',
+    'bio', 'startups', 'treatise', 'publications', 'patents',
     'talks', 'interviews', 'features', 'mentorship', 'awards', 'gallery', 'socials'
   ];
 
@@ -76,13 +76,6 @@ const Index = () => {
       '',
       'Sensor-based tracking of vehicle content (abandoned)',
       'https://patents.google.com/patent/US20220207505A1'
-    ],
-    contributions: [
-      'Votex: Open source, decentralized, transparent, and equitable protocol',
-      'designed to facilitate on-chain voting on the Bitcoin network,',
-      'utilizing ordinal theory.',
-      '',
-      'Documentation: https://docs.votex.co'
     ],
     talks: [
       'Talk at Shoptalk 2018',
