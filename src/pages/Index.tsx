@@ -147,7 +147,7 @@ const Index = () => {
       'https://www.gov.uk/global-talent-digital-technology/eligibility',
       'Top 100 Asian Stars in UK Tech (2015)',
       'https://asiansintech.com/top-100-asian-stars-uk-tech-2015/',
-      'Futurist Valley',
+      'Futurist at Futurist Valley (2024)',
       'https://futuristvalley.com/futurists/'
     ],
     gallery: [
