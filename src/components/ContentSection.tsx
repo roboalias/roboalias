@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ExternalLink } from 'lucide-react';
 
@@ -88,10 +87,17 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
     }
   };
 
+  // Reverse the content to show from bottom to top
+  const reversedContent = [...content].reverse();
+  const linesToShow = content.length - visibleLines;
+
   return (
     <div className="mb-8">
-      <div className="space-y-2 font-mono">
-        {content.slice(0, visibleLines).map((line, index) => renderLine(line, index)).filter(Boolean)}
+      <div className="space-y-2 font-mono flex flex-col-reverse">
+        {reversedContent.slice(linesToShow).map((line, index) => {
+          const originalIndex = content.length - 1 - (reversedContent.length - 1 - index);
+          return renderLine(line, originalIndex);
+        }).filter(Boolean)}
         {visibleLines < content.length && (
           <div className="text-terminal-blue animate-blink">▓</div>
         )}
