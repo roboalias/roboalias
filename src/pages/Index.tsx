@@ -6,7 +6,7 @@ import ContentSection from '@/components/ContentSection';
 const Index = () => {
   const sections = [
     'bio', 'startups', 'publications',
-    'speaking', 'media', 'awards', 'gallery', 'contact'
+    'speaking', 'interviews', 'awards', 'gallery', 'contact'
   ];
 
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -104,9 +104,7 @@ const Index = () => {
       'Petersen Automotive Museum Launch Event',
       'https://youtu.be/uDk0Mo_Yjlg'
     ],
-    media: [
-      'Interviews',
-      '',
+    interviews: [
       'Fox45',
       'https://youtu.be/IFdDrxNjfGQ?si=Jb7zGM5QlqsvQe-j',
       'KTLA5',
@@ -131,18 +129,12 @@ const Index = () => {
       'https://youtu.be/rw160IiNHXg',
       'TV Tokyo',
       'https://youtu.be/3oOYKcPl_iE',
-      '',
-      'Appearances',
-      '',
       'Shoptalk Spotlight Podcast',
       'https://open.spotify.com/episode/1sQ5nnccwdA96T3dJeDxqE?si=d1469ed13f1a4ae7',
       'The Rebound Podcast',
       'https://open.spotify.com/episode/48DzPkEtzlmnetuQzlAh71?si=4bc701269ab340a9',
       'The Shobeir Show Podcast',
       'https://theshobeirshow.com/podcast-item/episode-29-ali-ahmed-ceo-of-robomart/',
-      '',
-      'Features',
-      '',
       'Entrepreneur Magazine',
       'https://www.entrepreneur.com/starting-a-business/self-driving-shops-on-wheels-are-heading-to-your/472141',
       'Business Because',
