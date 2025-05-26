@@ -51,13 +51,9 @@ const Index = () => {
     treatise: [
       'Systema Robotica',
       '',
-      'A treatise on the order and evolution of robotkind',
-      'that serves as humanity\'s guide to a better understanding and',
-      'coexistence with robots in a future of non-human superintelligences.',
+      'A treatise on the order and evolution of robotkind, that serves as humanity\'s guide to a better understanding and coexistence with robots in a future of non-human superintelligences.',
       '',
-      'The first edition, now available as a book on Amazon and select bookstores,',
-      'follows the original scientific preprint \'On the Order and Evolution of',
-      'Robotkind\' published on TechRxiv.',
+      'The first edition, now available as a book on Amazon and select bookstores, follows the original scientific preprint \'On the Order and Evolution of Robotkind\' published on TechRxiv.',
       '',
       'Website',
       'https://www.systemarobotica.com',
@@ -159,8 +155,7 @@ const Index = () => {
       'X: https://x.com/robotica1i',
       'GitHub: https://github.com/robotica1i',
       '',
-      'For press inquiries and speaking engagements,',
-      'please reach out via LinkedIn or X.'
+      'For press inquiries and speaking engagements, please reach out via LinkedIn or X.'
     ]
   };
 
