@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import TerminalHeader from '@/components/TerminalHeader';
 import NavigationMenu from '@/components/NavigationMenu';
@@ -206,18 +205,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-foreground p-6 md:p-12 max-w-6xl mx-auto flex flex-col justify-end">
-      {/* Content sections appear above when active */}
-      {activeSection && (
-        <div className="mb-8">
-          <ContentSection 
-            section={activeSection}
-            content={contentData[activeSection] || []}
-          />
-        </div>
-      )}
+    <div className="min-h-screen bg-white text-foreground p-6 md:p-12 max-w-6xl mx-auto">
+      <div onClick={handleTerminalClick} className="cursor-pointer">
+        <TerminalHeader activeSection={activeSection} />
+      </div>
       
-      {/* Navigation menu */}
       <NavigationMenu 
         sections={sections}
         activeSection={activeSection}
@@ -225,33 +217,15 @@ const Index = () => {
         isVisible={showMenu}
       />
       
-      {/* Terminal command line */}
-      <div onClick={handleTerminalClick} className="cursor-pointer mb-4">
-        <div className="text-terminal-blue text-sm">
-          <span className="text-terminal-gray">~/</span>roboticali 
-          {activeSection && (
-            <>
-              <span className="text-terminal-gray"> &gt; </span>
-              {activeSection.toLowerCase()}
-            </>
-          )}
-          <span className="text-terminal-gray"> &gt;</span> 
-          <span className="terminal-cursor ml-1"></span>
-        </div>
-      </div>
-      
-      {/* Hero section aligned with other content */}
-      <div className="mb-8">
-        <h1 className="text-xl md:text-2xl font-bold mb-2 text-foreground">
-          Ali Ahmed
-        </h1>
-        <p className="text-base md:text-lg text-terminal-gray mb-4">
-          Roboticist. Founder. Inventor.
-        </p>
-      </div>
+      {activeSection && (
+        <ContentSection 
+          section={activeSection}
+          content={contentData[activeSection] || []}
+        />
+      )}
       
       {!activeSection && showMenu && (
-        <div className="text-terminal-gray text-sm mb-12">
+        <div className="text-terminal-gray text-sm mt-12">
           Click on any section above to explore roboticali's profile...
         </div>
       )}
