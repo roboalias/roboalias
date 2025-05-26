@@ -138,9 +138,7 @@ const Index = () => {
       'Entrepreneur Magazine',
       'https://www.entrepreneur.com/starting-a-business/self-driving-shops-on-wheels-are-heading-to-your/472141',
       'Business Because',
-      'https://www.businessbecause.com/news/mba-entrepreneurs/2741/mba-entrepreneur-finds-pictures-tell-a-thousand-words',
-      'Futurist Valley',
-      'https://futuristvalley.com/futurists/'
+      'https://www.businessbecause.com/news/mba-entrepreneurs/2741/mba-entrepreneur-finds-pictures-tell-a-thousand-words'
     ],
     awards: [
       'EB1A Alien of Extraordinary Abilities (2019)',
@@ -148,7 +146,9 @@ const Index = () => {
       'UK Tech Nation Exceptional Talent (2015)',
       'https://www.gov.uk/global-talent-digital-technology/eligibility',
       'Top 100 Asian Stars in UK Tech (2015)',
-      'https://asiansintech.com/top-100-asian-stars-uk-tech-2015/'
+      'https://asiansintech.com/top-100-asian-stars-uk-tech-2015/',
+      'Futurist Valley',
+      'https://futuristvalley.com/futurists/'
     ],
     gallery: [
       'Feature photos of appearances, talks, and events.',
