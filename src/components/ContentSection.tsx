@@ -52,28 +52,38 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
           </div>
         );
       } else {
-        // If the line is just a URL, show it as is (for cases where URL is standalone)
+        // If the line is just a URL, don't render it (it will be used for the previous line)
+        return null;
+      }
+    } else {
+      // Check if the next line is a URL
+      const nextLine = content[index + 1];
+      const nextLineMatch = nextLine?.match(urlRegex);
+      
+      if (nextLineMatch && line.trim() !== '') {
+        // This line should be hyperlinked to the URL on the next line
+        const url = nextLineMatch[0];
         return (
           <div key={index} className="text-sm leading-relaxed">
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-terminal-blue hover:underline inline-flex items-center gap-1 cursor-pointer"
+              className="text-foreground hover:text-terminal-blue inline-flex items-center gap-1 cursor-pointer"
             >
-              {url}
+              {line}
               <ExternalLink size={12} />
             </a>
           </div>
         );
+      } else {
+        // Regular text line without URL
+        return (
+          <div key={index} className="text-sm leading-relaxed">
+            {line}
+          </div>
+        );
       }
-    } else {
-      // Regular text line without URL
-      return (
-        <div key={index} className="text-sm leading-relaxed">
-          {line}
-        </div>
-      );
     }
   };
 
@@ -83,7 +93,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
         <span className="text-terminal-gray">~/</span>roboticali <span className="text-terminal-gray">&gt;</span> {section.toLowerCase()}
       </div>
       <div className="space-y-2 font-mono">
-        {content.slice(0, visibleLines).map((line, index) => renderLine(line, index))}
+        {content.slice(0, visibleLines).map((line, index) => renderLine(line, index)).filter(Boolean)}
         {visibleLines < content.length && (
           <div className="text-terminal-blue animate-blink">▓</div>
         )}
