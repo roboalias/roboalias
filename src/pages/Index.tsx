@@ -15,7 +15,6 @@ const Index = () => {
   const contentData: Record<string, string[]> = {
     bio: [
       'Cofounder & CEO of Robomart.',
-      'Author of Systema Robotica.',
       'Roboticist & inventor of the self-driving store.',
       'Robotics expert to Wefunder.',
       'Mentor and angel investor in robotics startups.',
@@ -222,12 +221,6 @@ const Index = () => {
           section={activeSection}
           content={contentData[activeSection] || []}
         />
-      )}
-      
-      {!activeSection && showMenu && (
-        <div className="text-terminal-gray text-sm mt-12">
-          Click on any section above to explore roboticali's profile...
-        </div>
       )}
     </div>
   );
