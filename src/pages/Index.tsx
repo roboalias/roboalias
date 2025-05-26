@@ -65,8 +65,7 @@ const Index = () => {
       'https://www.uktech.news/need-to-know-2/crowdfunding-your-tech-startup-founders-perspective-20140213'
     ],
     patents: [
-      'One tap/command grocery ordering via self-driving mini marts',
-      'and seamless checkout-free technology (granted)',
+      'One tap/command grocery ordering via self-driving mini marts (granted)',
       'https://patents.google.com/patent/US11227270B2',
       '',
       'Social networking system and methods of implementation (granted)',
