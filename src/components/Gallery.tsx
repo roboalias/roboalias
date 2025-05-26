@@ -109,38 +109,30 @@ const Gallery = () => {
         ))}
       </div>
 
-      {/* Carousel for mobile screens */}
-      <div className="md:hidden max-w-sm">
-        <Carousel className="w-full">
-          <CarouselContent>
-            {images.map((image, index) => (
-              <CarouselItem key={index}>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Card className="overflow-hidden cursor-pointer">
-                      <AspectRatio ratio={4/3}>
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className="object-cover w-full h-full"
-                        />
-                      </AspectRatio>
-                    </Card>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-4xl w-full">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
-                    />
-                  </DialogContent>
-                </Dialog>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+      {/* Vertical scrollable grid for mobile screens */}
+      <div className="md:hidden max-w-sm space-y-4 max-h-96 overflow-y-auto">
+        {images.map((image, index) => (
+          <Dialog key={index}>
+            <DialogTrigger asChild>
+              <Card className="overflow-hidden cursor-pointer">
+                <AspectRatio ratio={4/3}>
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="object-cover w-full h-full"
+                  />
+                </AspectRatio>
+              </Card>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl w-full">
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+              />
+            </DialogContent>
+          </Dialog>
+        ))}
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ExternalLink } from 'lucide-react';
 import Gallery from './Gallery';
@@ -9,6 +10,29 @@ interface ContentSectionProps {
 
 const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => {
   const [visibleLines, setVisibleLines] = useState<number>(0);
+  const [imagesLoaded, setImagesLoaded] = useState<Set<string>>(new Set());
+
+  // Preload images when section changes
+  useEffect(() => {
+    const imageUrls = content.filter(line => 
+      line.startsWith('/lovable-uploads/') && (line.endsWith('.png') || line.endsWith('.jpg') || line.endsWith('.jpeg'))
+    );
+
+    if (imageUrls.length > 0) {
+      const loadPromises = imageUrls.map(url => {
+        return new Promise<string>((resolve) => {
+          const img = new Image();
+          img.onload = () => resolve(url);
+          img.onerror = () => resolve(url); // Still resolve to prevent hanging
+          img.src = url;
+        });
+      });
+
+      Promise.all(loadPromises).then(loadedUrls => {
+        setImagesLoaded(new Set(loadedUrls));
+      });
+    }
+  }, [content]);
 
   useEffect(() => {
     setVisibleLines(0);
@@ -66,16 +90,20 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
 
     // Handle images with different sizes based on section
     if (isImage(line)) {
-      const imageSize = section === 'bio' ? 'max-w-[240px]' : section === 'treatise' ? 'max-w-[260px]' : 'max-w-[200px]';
+      const imageSize = section === 'bio' ? 'max-w-[280px]' : section === 'treatise' ? 'max-w-[240px]' : 'max-w-[200px]';
       const altText = section === 'bio' ? 'Profile photo' : 'Systema Robotica book cover';
+      const isLoaded = imagesLoaded.has(line);
       
       return (
         <div key={index} className="my-4">
-          <img 
-            src={line} 
-            alt={altText}
-            className={`${imageSize} h-auto rounded-lg shadow-md`}
-          />
+          <div className={`${imageSize} ${isLoaded ? '' : 'animate-pulse bg-gray-200'} rounded-lg`} style={{ minHeight: isLoaded ? 'auto' : '300px' }}>
+            <img 
+              src={line} 
+              alt={altText}
+              className={`${imageSize} h-auto rounded-lg shadow-md transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+              onLoad={() => setImagesLoaded(prev => new Set([...prev, line]))}
+            />
+          </div>
         </div>
       );
     }
