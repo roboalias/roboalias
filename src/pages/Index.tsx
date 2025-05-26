@@ -150,11 +150,7 @@ const Index = () => {
       'https://futuristvalley.com/futurists/'
     ],
     gallery: [
-      'Feature photos of appearances, talks, and events.',
-      'High-resolution images available upon request.',
-      '',
-      'Professional headshots and event photography',
-      'documenting key moments in robotics and entrepreneurship.'
+      ''
     ],
     contact: [
       'LinkedIn: https://www.linkedin.com/in/roboticali/',

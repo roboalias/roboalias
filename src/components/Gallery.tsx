@@ -67,9 +67,9 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-3xl">
       {/* Grid layout for larger screens */}
-      <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="hidden md:grid grid-cols-3 gap-3">
         {images.map((image, index) => (
           <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
             <AspectRatio ratio={4/3}>
@@ -84,7 +84,7 @@ const Gallery = () => {
       </div>
 
       {/* Carousel for mobile screens */}
-      <div className="md:hidden">
+      <div className="md:hidden max-w-sm">
         <Carousel className="w-full">
           <CarouselContent>
             {images.map((image, index) => (
