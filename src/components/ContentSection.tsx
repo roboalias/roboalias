@@ -26,12 +26,26 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
     return () => clearInterval(timer);
   }, [section, content.length]);
 
+  const isHeading = (line: string) => {
+    const headings = ['Treatise', 'Articles', 'Patents'];
+    return headings.includes(line.trim());
+  };
+
   const renderLine = (line: string, index: number) => {
     // Handle empty lines by rendering them with proper spacing
     if (line.trim() === '') {
       return (
         <div key={index} className="text-sm leading-relaxed">
           &nbsp;
+        </div>
+      );
+    }
+
+    // Check if this line is a section heading
+    if (isHeading(line)) {
+      return (
+        <div key={index} className="text-lg font-bold text-terminal-blue leading-relaxed mt-4 mb-2">
+          {line}
         </div>
       );
     }
