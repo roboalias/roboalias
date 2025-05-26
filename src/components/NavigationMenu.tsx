@@ -21,7 +21,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ sections, activeSection
             className={`text-left py-1 px-2 rounded transition-colors ${
               activeSection === section
                 ? 'text-terminal-blue bg-terminal-blue bg-opacity-10'
-                : 'text-terminal-blue hover:text-terminal-blue hover:bg-terminal-blue hover:bg-opacity-5'
+                : 'text-terminal-gray hover:text-terminal-blue hover:bg-terminal-blue hover:bg-opacity-5'
             }`}
           >
             {section.toLowerCase()}
