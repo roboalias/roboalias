@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import TerminalHeader from '@/components/TerminalHeader';
 import NavigationMenu from '@/components/NavigationMenu';
@@ -225,7 +226,7 @@ const Index = () => {
       />
       
       {/* Terminal command line */}
-      <div onClick={handleTerminalClick} className="cursor-pointer mb-8">
+      <div onClick={handleTerminalClick} className="cursor-pointer mb-4">
         <div className="text-terminal-blue text-sm">
           <span className="text-terminal-gray">~/</span>roboticali 
           {activeSection && (
@@ -239,8 +240,8 @@ const Index = () => {
         </div>
       </div>
       
-      {/* Hero section fixed at bottom left */}
-      <div className="fixed bottom-6 left-6">
+      {/* Hero section aligned with other content */}
+      <div className="mb-8">
         <h1 className="text-xl md:text-2xl font-bold mb-2 text-foreground">
           Ali Ahmed
         </h1>
