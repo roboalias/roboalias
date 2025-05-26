@@ -155,20 +155,20 @@ const Index = () => {
       'https://futuristvalley.com/futurists/'
     ],
     mentorship: [
-      'Lancaster University',
-      'President of the L.A. Philanthropic Alumni Chapter',
+      'President of the L.A. Philanthropic Alumni Chapter at Lancaster University',
+      'https://www.lancaster.ac.uk',
       '',
-      'Singularity University',
-      'Startup Mentor',
+      'Startup Mentor at Singularity University',
+      'https://su.org',
       '',
-      'Founder Institute',
-      'Startup Mentor',
+      'Startup Mentor at Founder Institute',
+      'https://fi.co',
       '',
-      'National Incubation Centre',
-      'Startup Mentor',
+      'Startup Mentor at National Incubation Centre',
+      'https://nicpakistan.pk',
       '',
-      'Wayra',
-      'Startup Mentor'
+      'Startup Mentor at Wayra',
+      'https://wayra.com'
     ],
     awards: [
       'Alien of Extraordinary Abilities (2019)',
