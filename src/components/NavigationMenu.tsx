@@ -5,12 +5,15 @@ interface NavigationMenuProps {
   sections: string[];
   activeSection: string | null;
   onSectionClick: (section: string) => void;
+  isVisible: boolean;
 }
 
-const NavigationMenu: React.FC<NavigationMenuProps> = ({ sections, activeSection, onSectionClick }) => {
+const NavigationMenu: React.FC<NavigationMenuProps> = ({ sections, activeSection, onSectionClick, isVisible }) => {
+  if (!isVisible) return null;
+
   return (
     <div className="mb-8">
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 text-sm">
+      <div className="flex flex-col gap-1 text-sm max-w-xs">
         {sections.map((section) => (
           <button
             key={section}

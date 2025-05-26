@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import TerminalHeader from '@/components/TerminalHeader';
 import NavigationMenu from '@/components/NavigationMenu';
@@ -11,6 +10,7 @@ const Index = () => {
   ];
 
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [showMenu, setShowMenu] = useState<boolean>(true);
 
   const contentData: Record<string, string[]> = {
     bio: [
@@ -196,15 +196,25 @@ const Index = () => {
 
   const handleSectionClick = (section: string) => {
     setActiveSection(section);
+    setShowMenu(false);
+  };
+
+  const handleTerminalClick = () => {
+    setActiveSection(null);
+    setShowMenu(true);
   };
 
   return (
     <div className="min-h-screen bg-white text-foreground p-6 md:p-12 max-w-6xl mx-auto">
-      <TerminalHeader />
+      <div onClick={handleTerminalClick} className="cursor-pointer">
+        <TerminalHeader />
+      </div>
+      
       <NavigationMenu 
         sections={sections}
         activeSection={activeSection}
         onSectionClick={handleSectionClick}
+        isVisible={showMenu}
       />
       
       {activeSection && (
@@ -214,7 +224,7 @@ const Index = () => {
         />
       )}
       
-      {!activeSection && (
+      {!activeSection && showMenu && (
         <div className="text-terminal-gray text-sm mt-12">
           Click on any section above to explore roboticali's profile...
         </div>

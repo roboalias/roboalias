@@ -8,11 +8,12 @@ const TerminalHeader = () => {
         <span className="text-terminal-gray">~/dev/</span>roboticali <span className="text-terminal-gray">&gt;</span> ls
       </div>
       <div className="mb-8">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-foreground">
-          We're building the<br />
-          next-gen operating system<br />
-          for AI agents.
+        <h1 className="text-2xl md:text-3xl font-bold mb-2 text-foreground">
+          Ali Ahmed
         </h1>
+        <p className="text-lg md:text-xl text-terminal-gray mb-4">
+          Roboticist. Founder. Inventor. Author.
+        </p>
         <div className="text-terminal-blue text-sm">
           <span className="text-terminal-gray">~/dev/</span>roboticali <span className="text-terminal-gray">&gt;</span> 
           <span className="terminal-cursor ml-1"></span>
