@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,21 @@ export default {
 			}
 		},
 		extend: {
+			fontSize: {
+				'xs': '0.875rem',    // 14px (was 12px)
+				'sm': '1rem',        // 16px (was 14px)
+				'base': '1.125rem',  // 18px (was 16px)
+				'lg': '1.25rem',     // 20px (was 18px)
+				'xl': '1.375rem',    // 22px (was 20px)
+				'2xl': '1.625rem',   // 26px (was 24px)
+				'3xl': '2rem',       // 32px (was 30px)
+				'4xl': '2.5rem',     // 40px (was 36px)
+				'5xl': '3.25rem',    // 52px (was 48px)
+				'6xl': '4rem',       // 64px (was 60px)
+				'7xl': '5rem',       // 80px (was 72px)
+				'8xl': '6.5rem',     // 104px (was 96px)
+				'9xl': '8.5rem',     // 136px (was 128px)
+			},
 			fontFamily: {
 				'mono': ['Chakra Petch', 'monospace'],
 			},
