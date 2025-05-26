@@ -60,7 +60,8 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
       const nextLine = content[index + 1];
       const nextLineMatch = nextLine?.match(urlRegex);
       
-      if (nextLineMatch && line.trim() !== '') {
+      // Don't hyperlink if the line contains "Stealth" (to exclude stealth startup)
+      if (nextLineMatch && line.trim() !== '' && !line.toLowerCase().includes('stealth')) {
         // This line should be hyperlinked to the URL on the next line
         const url = nextLineMatch[0];
         return (
