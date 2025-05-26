@@ -13,7 +13,7 @@ const TerminalHeader: React.FC<TerminalHeaderProps> = ({ activeSection }) => {
           Ali Ahmed
         </h1>
         <p className="text-base md:text-lg text-terminal-gray mb-4">
-          Roboticist. Founder. Inventor. Author.
+          Roboticist. Founder. Inventor.
         </p>
         <div className="text-terminal-blue text-sm">
           <span className="text-terminal-gray">~/</span>roboticali 
