@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import TerminalHeader from '@/components/TerminalHeader';
 import NavigationMenu from '@/components/NavigationMenu';
 import ContentSection from '@/components/ContentSection';
-import BottomRightRobot from '@/components/BottomRightRobot';
 
 const Index = () => {
   const sections = [
@@ -189,8 +188,6 @@ const Index = () => {
           content={contentData[activeSection] || []}
         />
       )}
-
-      <BottomRightRobot />
     </div>
   );
 };
