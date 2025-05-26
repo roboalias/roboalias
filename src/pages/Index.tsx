@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import TerminalHeader from '@/components/TerminalHeader';
 import NavigationMenu from '@/components/NavigationMenu';
@@ -18,13 +17,14 @@ const Index = () => {
       'Cofounder & CEO of Robomart.',
       'Roboticist & inventor of the self-driving store.',
       'Author of Systema Robotica.',
-      '/lovable-uploads/6b7ccd1a-d936-4651-a0d2-caff26fcdaea.png',
       'Robotics expert to Wefunder.',
       'Angel investor in robotics startups.',
       'Startup mentor at Singularity University, FI, NIC, Wayra.',
       '',
       'PhD Dropout. Double Masters MSc + MBA.',
-      'Management, Computing, Design, Marketing.'
+      'Management, Computing, Design, Marketing.',
+      '',
+      '/lovable-uploads/558fe4d4-afa7-4c35-87ce-1a04d2a6a553.png'
     ],
     startups: [
       'Founded',
@@ -52,7 +52,7 @@ const Index = () => {
       'Treatise',
       '',
       'Systema Robotica',
-      '/lovable-uploads/6b7ccd1a-d936-4651-a0d2-caff26fcdaea.png',
+      '/lovable-uploads/558fe4d4-afa7-4c35-87ce-1a04d2a6a553.png',
       '',
       'A treatise on the order and evolution of robotkind',
       'that serves as humanity\'s guide to a better understanding and',
