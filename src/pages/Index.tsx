@@ -49,13 +49,13 @@ const Index = () => {
       'Audible: https://www.audible.com/pd/Systema-Robotica-Audiobook/B0DG6XFN1V'
     ],
     publications: [
-      'On the Order and Evolution of Robotkind (paper preprint in Techrxiv)',
+      'On the Order and Evolution of Robotkind',
       'https://www.techrxiv.org/doi/full/10.36227/techrxiv.172373477.73979469/v1',
       '',
-      'How to win in the autonomous taxi space (article)',
+      'How to win in the autonomous taxi space',
       'https://techcrunch.com/2017/09/14/how-to-win-in-the-autonomous-taxi-space/',
       '',
-      'The On-Demand Delivery Trilemma (article)',
+      'The On-Demand Delivery Trilemma',
       'https://techcrunch.com/2023/02/15/the-on-demand-delivery-trilemma/',
       '',
       'The On-Command Economy',
