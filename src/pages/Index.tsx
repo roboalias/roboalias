@@ -50,6 +50,7 @@ const Index = () => {
       'Treatise',
       '',
       'Systema Robotica',
+      '',
       'A treatise on the order and evolution of robotkind',
       'that serves as humanity\'s guide to a better understanding and',
       'coexistence with robots in a future of non-human superintelligences.',
