@@ -16,6 +16,7 @@ const Index = () => {
     bio: [
       'Cofounder & CEO of Robomart.',
       'Roboticist & inventor of the self-driving store.',
+      'Author of Systema Robotica.',
       'Robotics expert to Wefunder.',
       'Mentor and angel investor in robotics startups.',
       '',
