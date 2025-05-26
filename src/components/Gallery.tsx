@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   Carousel,
@@ -11,6 +12,18 @@ import { Card } from "@/components/ui/card";
 
 const Gallery = () => {
   const images = [
+    {
+      src: "/lovable-uploads/f463beb9-ef1f-4417-a29a-eb7bb14d870c.png",
+      alt: "Ali Ahmed being interviewed on KTLA5 Morning News with Robomart vehicle"
+    },
+    {
+      src: "/lovable-uploads/e93f2f4e-83d0-4d7d-af0a-75e7bfe2d20e.png",
+      alt: "Ali Ahmed demonstrating Robomart technology at tech exhibition"
+    },
+    {
+      src: "/lovable-uploads/9fe206ce-e91e-4edf-a48a-601d284f8e7b.png",
+      alt: "Ali Ahmed portrait with American flag"
+    },
     {
       src: "/lovable-uploads/242b7aba-aaef-47e8-a894-fe99fb2edfb7.png",
       alt: "Ali Ahmed presenting at Groceryshop conference"
