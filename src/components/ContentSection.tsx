@@ -27,7 +27,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
   }, [section, content.length]);
 
   const isHeading = (line: string) => {
-    const headings = ['Treatise', 'Articles', 'Patents'];
+    const headings = ['Treatise', 'Articles', 'Patents', 'Preprints'];
     return headings.includes(line.trim());
   };
 
@@ -44,7 +44,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
     // Check if this line is a section heading
     if (isHeading(line)) {
       return (
-        <div key={index} className="text-lg font-bold text-terminal-blue leading-relaxed mt-4 mb-2">
+        <div key={index} className="text-lg font-bold text-gray-400 leading-relaxed mt-4 mb-2">
           {line}
         </div>
       );
