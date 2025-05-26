@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { ExternalLink } from 'lucide-react';
+import Gallery from './Gallery';
 
 interface ContentSectionProps {
   section: string;
@@ -26,6 +27,25 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
     return () => clearInterval(timer);
   }, [section, content.length]);
 
+  // Special handling for gallery section
+  if (section === 'gallery') {
+    return (
+      <div className="mb-8">
+        <div className="space-y-4 font-mono mb-6">
+          {content.slice(0, visibleLines).map((line, index) => (
+            <div key={index} className="text-sm leading-relaxed">
+              {line.trim() === '' ? '\u00A0' : line}
+            </div>
+          ))}
+          {visibleLines < content.length && (
+            <div className="text-terminal-blue animate-blink">▓</div>
+          )}
+        </div>
+        {visibleLines >= content.length && <Gallery />}
+      </div>
+    );
+  }
+
   const isHeading = (line: string) => {
     const headings = ['Treatise', 'Articles', 'Patents', 'Preprints', 'Interviews', 'Appearances', 'Features', 'Founded', 'Backed'];
     return headings.includes(line.trim());
@@ -41,7 +61,6 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
       );
     }
 
-    // Check if this line is a section heading
     if (isHeading(line)) {
       return (
         <div key={index} className="text-base font-bold text-gray-400 leading-relaxed mt-4 mb-2">
@@ -50,16 +69,13 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
       );
     }
 
-    // Check if line contains a URL
     const urlRegex = /(https?:\/\/[^\s]+)/;
     const match = line.match(urlRegex);
     
     if (match) {
-      // Extract the text before the URL and the URL itself
       const url = match[0];
       const textBeforeUrl = line.substring(0, line.indexOf(url)).trim();
       
-      // If there's text before the URL, make it clickable
       if (textBeforeUrl) {
         return (
           <div key={index} className="text-sm leading-relaxed">
@@ -75,17 +91,13 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
           </div>
         );
       } else {
-        // If the line is just a URL, don't render it (it will be used for the previous line)
         return null;
       }
     } else {
-      // Check if the next line is a URL
       const nextLine = content[index + 1];
       const nextLineMatch = nextLine?.match(urlRegex);
       
-      // Don't hyperlink if the line contains "Stealth" (to exclude stealth startup)
       if (nextLineMatch && line.trim() !== '' && !line.toLowerCase().includes('stealth')) {
-        // This line should be hyperlinked to the URL on the next line
         const url = nextLineMatch[0];
         return (
           <div key={index} className="text-sm leading-relaxed">
@@ -101,7 +113,6 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
           </div>
         );
       } else {
-        // Regular text line without URL
         return (
           <div key={index} className="text-sm leading-relaxed">
             {line}
