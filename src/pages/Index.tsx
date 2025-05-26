@@ -110,7 +110,7 @@ const Index = () => {
       'Appearance on Shoptalk Spotlight Podcast',
       'https://open.spotify.com/episode/1sQ5nnccwdA96T3dJeDxqE?si=d1469ed13f1a4ae7',
       'Appearance on The Rebound Podcast',
-      'https://open.spotify.com/episode/48DzPkEtzlmnetuQzlAh71?si=4bc701269ab340a9'
+      'https://open.spotify.com/episode/48DzPkEtzlmnetuQzlAh71?si=4bc701269ab340a9',
       'Appearance on The Shobeir Show Podcast',
       'https://theshobeirshow.com/podcast-item/episode-29-ali-ahmed-ceo-of-robomart/',
       '',
