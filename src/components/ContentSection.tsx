@@ -27,7 +27,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
   }, [section, content.length]);
 
   const isHeading = (line: string) => {
-    const headings = ['Treatise', 'Articles', 'Patents', 'Preprints', 'Interviews', 'Appearances', 'Features'];
+    const headings = ['Treatise', 'Articles', 'Patents', 'Preprints', 'Interviews', 'Appearances', 'Features', 'Founded', 'Backed'];
     return headings.includes(line.trim());
   };
 
