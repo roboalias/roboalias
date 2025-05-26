@@ -52,7 +52,7 @@ const Index = () => {
       'Treatise',
       '',
       'Systema Robotica',
-      '/lovable-uploads/558fe4d4-afa7-4c35-87ce-1a04d2a6a553.png',
+      '/lovable-uploads/281aeea0-3035-4fba-b3dc-097d4cb81ead.png',
       '',
       'A treatise on the order and evolution of robotkind',
       'that serves as humanity\'s guide to a better understanding and',
