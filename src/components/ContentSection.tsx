@@ -28,42 +28,47 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
 
   const renderLine = (line: string, index: number) => {
     // Check if line contains a URL
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    const hasUrl = urlRegex.test(line);
+    const urlRegex = /(https?:\/\/[^\s]+)/;
+    const match = line.match(urlRegex);
     
-    if (hasUrl) {
-      const parts = line.split(urlRegex);
-      return (
-        <div key={index} className="text-sm leading-relaxed">
-          {parts.map((part, partIndex) => {
-            if (urlRegex.test(part)) {
-              // This is a URL - get the text before it for the link text
-              const textBefore = parts[partIndex - 1] || '';
-              const linkText = textBefore.trim() || part;
-              
-              return (
-                <a
-                  key={partIndex}
-                  href={part}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-terminal-blue hover:underline inline-flex items-center gap-1 cursor-pointer"
-                >
-                  {linkText}
-                  <ExternalLink size={12} />
-                </a>
-              );
-            } else if (partIndex < parts.length - 1 && urlRegex.test(parts[partIndex + 1])) {
-              // This text is followed by a URL, so don't render it separately
-              return null;
-            } else {
-              // Regular text that's not associated with a URL
-              return part ? <span key={partIndex}>{part}</span> : null;
-            }
-          })}
-        </div>
-      );
+    if (match) {
+      // Extract the text before the URL and the URL itself
+      const url = match[0];
+      const textBeforeUrl = line.substring(0, line.indexOf(url)).trim();
+      
+      // If there's text before the URL, make it clickable
+      if (textBeforeUrl) {
+        return (
+          <div key={index} className="text-sm leading-relaxed">
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-terminal-blue inline-flex items-center gap-1 cursor-pointer"
+            >
+              {textBeforeUrl}
+              <ExternalLink size={12} />
+            </a>
+          </div>
+        );
+      } else {
+        // If the line is just a URL, show it as is (for cases where URL is standalone)
+        return (
+          <div key={index} className="text-sm leading-relaxed">
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-terminal-blue hover:underline inline-flex items-center gap-1 cursor-pointer"
+            >
+              {url}
+              <ExternalLink size={12} />
+            </a>
+          </div>
+        );
+      }
     } else {
+      // Regular text line without URL
       return (
         <div key={index} className="text-sm leading-relaxed">
           {line}
