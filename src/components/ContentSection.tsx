@@ -37,28 +37,29 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
         <div key={index} className="text-sm leading-relaxed">
           {parts.map((part, partIndex) => {
             if (urlRegex.test(part)) {
-              // This is a URL, extract the text before it
-              const textBeforeUrl = parts[partIndex - 1] || '';
+              // This is a URL - get the text before it for the link text
+              const textBefore = parts[partIndex - 1] || '';
+              const linkText = textBefore.trim() || part;
+              
               return (
                 <a
                   key={partIndex}
                   href={part}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-terminal-blue hover:underline inline-flex items-center gap-1"
+                  className="text-terminal-blue hover:underline inline-flex items-center gap-1 cursor-pointer"
                 >
-                  {textBeforeUrl.trim()}
+                  {linkText}
                   <ExternalLink size={12} />
                 </a>
               );
-            } else if (partIndex === parts.length - 1 && part.trim()) {
-              // Last part that's not a URL
-              return <span key={partIndex}>{part}</span>;
-            } else if (partIndex === 0 && !urlRegex.test(parts[1])) {
-              // First part when there's no URL following
-              return <span key={partIndex}>{part}</span>;
+            } else if (partIndex < parts.length - 1 && urlRegex.test(parts[partIndex + 1])) {
+              // This text is followed by a URL, so don't render it separately
+              return null;
+            } else {
+              // Regular text that's not associated with a URL
+              return part ? <span key={partIndex}>{part}</span> : null;
             }
-            return null;
           })}
         </div>
       );
@@ -73,10 +74,10 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
 
   return (
     <div className="mb-8">
-      <div className="text-terminal-blue text-sm mb-4">
+      <div className="text-terminal-blue text-sm mb-4 font-mono">
         <span className="text-terminal-gray">~/</span>roboticali <span className="text-terminal-gray">&gt;</span> {section.toLowerCase()}
       </div>
-      <div className="space-y-2">
+      <div className="space-y-2 font-mono">
         {content.slice(0, visibleLines).map((line, index) => renderLine(line, index))}
         {visibleLines < content.length && (
           <div className="text-terminal-blue animate-blink">▓</div>
