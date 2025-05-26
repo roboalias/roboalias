@@ -27,6 +27,15 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
   }, [section, content.length]);
 
   const renderLine = (line: string, index: number) => {
+    // Handle empty lines by rendering them with proper spacing
+    if (line.trim() === '') {
+      return (
+        <div key={index} className="text-sm leading-relaxed">
+          &nbsp;
+        </div>
+      );
+    }
+
     // Check if line contains a URL
     const urlRegex = /(https?:\/\/[^\s]+)/;
     const match = line.match(urlRegex);
