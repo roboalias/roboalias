@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Carousel,
@@ -83,8 +82,8 @@ const Gallery = () => {
 
   return (
     <div className="space-y-6 max-w-3xl">
-      {/* Grid layout for larger screens */}
-      <div className="hidden md:grid grid-cols-3 gap-3">
+      {/* Responsive grid: single column on mobile, three columns on desktop */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         {images.map((image, index) => (
           <Dialog key={index}>
             <DialogTrigger asChild>
@@ -94,32 +93,6 @@ const Gallery = () => {
                     src={image.src}
                     alt={image.alt}
                     className="object-cover w-full h-full hover:opacity-70 transition-opacity duration-500"
-                  />
-                </AspectRatio>
-              </Card>
-            </DialogTrigger>
-            <DialogContent className="max-w-4xl w-full">
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
-              />
-            </DialogContent>
-          </Dialog>
-        ))}
-      </div>
-
-      {/* Vertical scrollable grid for mobile screens */}
-      <div className="md:hidden max-w-sm space-y-4 max-h-96 overflow-y-auto">
-        {images.map((image, index) => (
-          <Dialog key={index}>
-            <DialogTrigger asChild>
-              <Card className="overflow-hidden cursor-pointer">
-                <AspectRatio ratio={4/3}>
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="object-cover w-full h-full"
                   />
                 </AspectRatio>
               </Card>
