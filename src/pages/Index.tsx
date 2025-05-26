@@ -155,7 +155,7 @@ const Index = () => {
       'X: https://x.com/robotica1i',
       'GitHub: https://github.com/robotica1i',
       '',
-      'For press inquiries and speaking engagements, please reach out via LinkedIn or X.'
+      'For press inquiries and speaking engagements, kindly reach out via LinkedIn or X.'
     ]
   };
 
