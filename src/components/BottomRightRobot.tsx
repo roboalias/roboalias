@@ -3,7 +3,7 @@ import React from 'react';
 
 const BottomRightRobot = () => {
   return (
-    <div className="fixed bottom-0 right-4 z-10">
+    <div className="fixed bottom-0 right-4 md:right-12 z-10">
       <img 
         src="/lovable-uploads/c20e66a7-dde6-4e15-83c1-17230146f9e9.png"
         alt="Pixel robot"
