@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import TerminalHeader from '@/components/TerminalHeader';
 import NavigationMenu from '@/components/NavigationMenu';
@@ -26,7 +25,7 @@ const Index = () => {
     ],
     startups: [
       'Robomart (cofounder & CEO) - https://robomart.ai',
-      'Stealth AI startup (cofounder & advisor) - Confidential',
+      'Stealth AI startup (cofounder & advisor)',
       'Robot.com (angel investor) - https://robot.com',
       'Seaflight (angel investor) - https://www.seaflight.tech',
       'Wefunder (angel investor and robotics expert) - https://wefunder.com',
