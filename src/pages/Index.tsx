@@ -5,7 +5,7 @@ import ContentSection from '@/components/ContentSection';
 
 const Index = () => {
   const sections = [
-    'bio', 'startups', 'publications',
+    'bio', 'startups', 'treatise', 'patents', 'publications',
     'speaking', 'interviews', 'awards', 'gallery', 'contact'
   ];
 
@@ -48,9 +48,7 @@ const Index = () => {
       'CareRev (angel investor)',
       'https://carerev.com'
     ],
-    publications: [
-      'Treatise',
-      '',
+    treatise: [
       'Systema Robotica',
       '/lovable-uploads/281aeea0-3035-4fba-b3dc-097d4cb81ead.png',
       '',
@@ -67,15 +65,9 @@ const Index = () => {
       'Amazon',
       'https://www.amazon.com/dp/B0DBHB22GM',
       'Audible',
-      'https://www.audible.com/pd/Systema-Robotica-Audiobook/B0DG6XFN1V',
-      '',
-      'Preprints',
-      '',
-      'On the Order and Evolution of Robotkind',
-      'https://www.techrxiv.org/doi/full/10.36227/techrxiv.172373477.73979469/v1',
-      '',
-      'Patents',
-      '',
+      'https://www.audible.com/pd/Systema-Robotica-Audiobook/B0DG6XFN1V'
+    ],
+    patents: [
       'One tap/command grocery ordering via self-driving mini marts (granted)',
       'https://patents.google.com/patent/US11227270B2',
       'Social networking system and methods of implementation (granted)',
@@ -83,9 +75,11 @@ const Index = () => {
       'Sharing content on devices with reduced user actions (withdrawn)',
       'https://patents.google.com/patent/EP2887686A1',
       'Sensor-based tracking of vehicle content (abandoned)',
-      'https://patents.google.com/patent/US20220207505A1',
-      '',
-      'Articles',
+      'https://patents.google.com/patent/US20220207505A1'
+    ],
+    publications: [
+      'On the Order and Evolution of Robotkind',
+      'https://www.techrxiv.org/doi/full/10.36227/techrxiv.172373477.73979469/v1',
       '',
       'How to win in the autonomous taxi space',
       'https://techcrunch.com/2017/09/14/how-to-win-in-the-autonomous-taxi-space/',
@@ -143,14 +137,14 @@ const Index = () => {
       'https://www.businessbecause.com/news/mba-entrepreneurs/2741/mba-entrepreneur-finds-pictures-tell-a-thousand-words'
     ],
     awards: [
+      'Futurist at Futurist Valley (2024)',
+      'https://futuristvalley.com/futurists/',
       'EB1A Alien of Extraordinary Abilities (2019)',
       'https://en.wikipedia.org/wiki/Alien_of_extraordinary_ability',
       'UK Tech Nation Exceptional Talent (2015)',
       'https://www.gov.uk/global-talent-digital-technology/eligibility',
       'Top 100 Asian Stars in UK Tech (2015)',
-      'https://asiansintech.com/top-100-asian-stars-uk-tech-2015/',
-      'Futurist at Futurist Valley (2024)',
-      'https://futuristvalley.com/futurists/'
+      'https://asiansintech.com/top-100-asian-stars-uk-tech-2015/'
     ],
     gallery: [
       ''
