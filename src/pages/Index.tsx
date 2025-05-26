@@ -6,7 +6,7 @@ import ContentSection from '@/components/ContentSection';
 const Index = () => {
   const sections = [
     'bio', 'startups', 'treatise', 'publications', 'patents',
-    'talks', 'interviews', 'features', 'mentorship', 'awards', 'gallery', 'socials'
+    'talks', 'interviews', 'features', 'mentorship', 'awards', 'gallery', 'contact'
   ];
 
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -180,15 +180,13 @@ const Index = () => {
       'Professional headshots and event photography',
       'documenting key moments in robotics and entrepreneurship.'
     ],
-    socials: [
+    contact: [
       'LinkedIn: https://www.linkedin.com/in/roboticali/',
-      'Twitter/X: https://x.com/robotica1i',
+      'X: https://x.com/robotica1i',
       'GitHub: https://github.com/robotica1i',
       '',
-      'Handle: @roboticali (consistent across all platforms)',
-      '',
       'For press inquiries and speaking engagements,',
-      'please reach out via LinkedIn or Twitter.'
+      'please reach out via LinkedIn or X.'
     ]
   };
 
