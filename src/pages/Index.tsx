@@ -5,7 +5,7 @@ import ContentSection from '@/components/ContentSection';
 
 const Index = () => {
   const sections = [
-    'bio', 'startups', 'publications', 'patents',
+    'bio', 'startups', 'publications',
     'talks', 'interviews', 'mentorship', 'awards', 'gallery', 'contact'
   ];
 
@@ -38,6 +38,8 @@ const Index = () => {
       'CareRev (angel investor) - https://carerev.com'
     ],
     publications: [
+      'Treatise',
+      '',
       'Systema Robotica',
       'A treatise on the order and evolution of robotkind',
       '',
@@ -54,6 +56,9 @@ const Index = () => {
       '',
       'On the Order and Evolution of Robotkind',
       'https://www.techrxiv.org/doi/full/10.36227/techrxiv.172373477.73979469/v1',
+      '',
+      'Articles',
+      '',
       'How to win in the autonomous taxi space',
       'https://techcrunch.com/2017/09/14/how-to-win-in-the-autonomous-taxi-space/',
       'The On-Demand Delivery Trilemma',
@@ -61,9 +66,10 @@ const Index = () => {
       'The On-Command Economy',
       'https://chatbotsmagazine.com/the-on-command-economy-59587161b167',
       'Crowdfunding your startup: a founder\'s perspective',
-      'https://www.uktech.news/need-to-know-2/crowdfunding-your-tech-startup-founders-perspective-20140213'
-    ],
-    patents: [
+      'https://www.uktech.news/need-to-know-2/crowdfunding-your-tech-startup-founders-perspective-20140213',
+      '',
+      'Patents',
+      '',
       'One tap/command grocery ordering via self-driving mini marts (granted)',
       'https://patents.google.com/patent/US11227270B2',
       'Social networking system and methods of implementation (granted)',
