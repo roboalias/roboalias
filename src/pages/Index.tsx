@@ -5,7 +5,7 @@ import ContentSection from '@/components/ContentSection';
 
 const Index = () => {
   const sections = [
-    'bio', 'startups', 'treatise', 'publications', 'patents',
+    'bio', 'startups', 'publications', 'patents',
     'talks', 'interviews', 'mentorship', 'awards', 'gallery', 'contact'
   ];
 
@@ -37,7 +37,7 @@ const Index = () => {
       'Airhouse (acq.) (angel investor) - https://www.airhouse.io',
       'CareRev (angel investor) - https://carerev.com'
     ],
-    treatise: [
+    publications: [
       'Systema Robotica',
       'A treatise on the order and evolution of robotkind',
       '',
@@ -49,12 +49,9 @@ const Index = () => {
       'follows the original scientific preprint \'On the Order and Evolution of',
       'Robotkind\' published on TechRxiv.',
       '',
+      'Available: Website | Amazon | Audible',
+      'https://www.systemarobotica.com',
       '',
-      'Website: https://www.systemarobotica.com',
-      'Amazon: https://www.amazon.com/dp/B0DBHB22GM',
-      'Audible: https://www.audible.com/pd/Systema-Robotica-Audiobook/B0DG6XFN1V'
-    ],
-    publications: [
       'On the Order and Evolution of Robotkind',
       'https://www.techrxiv.org/doi/full/10.36227/techrxiv.172373477.73979469/v1',
       'How to win in the autonomous taxi space',
