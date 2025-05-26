@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Carousel,
   CarouselContent,
@@ -9,9 +9,20 @@ import {
 } from "@/components/ui/carousel";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const images = [
+    {
+      src: "/lovable-uploads/6b7ccd1a-d936-4651-a0d2-caff26fcdaea.png",
+      alt: "Ali Ahmed with Robomart at recent event"
+    },
     {
       src: "/lovable-uploads/f463beb9-ef1f-4417-a29a-eb7bb14d870c.png",
       alt: "Ali Ahmed being interviewed on KTLA5 Morning News with Robomart vehicle"
@@ -79,15 +90,26 @@ const Gallery = () => {
       {/* Grid layout for larger screens */}
       <div className="hidden md:grid grid-cols-3 gap-3">
         {images.map((image, index) => (
-          <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
-            <AspectRatio ratio={4/3}>
+          <Dialog key={index}>
+            <DialogTrigger asChild>
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+                <AspectRatio ratio={4/3}>
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="object-cover w-full h-full hover:opacity-70 transition-opacity duration-500"
+                  />
+                </AspectRatio>
+              </Card>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl w-full">
               <img
                 src={image.src}
                 alt={image.alt}
-                className="object-cover w-full h-full hover:opacity-70 transition-opacity duration-500"
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
               />
-            </AspectRatio>
-          </Card>
+            </DialogContent>
+          </Dialog>
         ))}
       </div>
 
@@ -97,15 +119,26 @@ const Gallery = () => {
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
-                <Card className="overflow-hidden">
-                  <AspectRatio ratio={4/3}>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Card className="overflow-hidden cursor-pointer">
+                      <AspectRatio ratio={4/3}>
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="object-cover w-full h-full"
+                        />
+                      </AspectRatio>
+                    </Card>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl w-full">
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className="object-cover w-full h-full"
+                      className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
                     />
-                  </AspectRatio>
-                </Card>
+                  </DialogContent>
+                </Dialog>
               </CarouselItem>
             ))}
           </CarouselContent>

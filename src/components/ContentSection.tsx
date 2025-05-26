@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ExternalLink } from 'lucide-react';
 import Gallery from './Gallery';
@@ -66,7 +67,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
 
     // Handle images with different sizes based on section
     if (isImage(line)) {
-      const imageSize = section === 'bio' ? 'max-w-[180px]' : 'max-w-[200px]';
+      const imageSize = section === 'bio' ? 'max-w-[240px]' : section === 'treatise' ? 'max-w-[280px]' : 'max-w-[200px]';
       const altText = section === 'bio' ? 'Profile photo' : 'Systema Robotica book cover';
       
       return (
