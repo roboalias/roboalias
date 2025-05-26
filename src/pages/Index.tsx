@@ -171,9 +171,14 @@ const Index = () => {
       'https://wayra.com'
     ],
     awards: [
-      'Alien of Extraordinary Abilities (2019)',
-      'UK Tech Nation Exceptional Talent Holder (2015)',
-      'Top 100 Asian Stars in UK Tech (2015)'
+      'EB1A Alien of Extraordinary Abilities (2019)',
+      'https://en.wikipedia.org/wiki/Alien_of_extraordinary_ability',
+      '',
+      'UK Tech Nation Exceptional Talent (2015)',
+      'https://www.gov.uk/global-talent-digital-technology/eligibility',
+      '',
+      'Top 100 Asian Stars in UK Tech (2015)',
+      'https://asiansintech.com/top-100-asian-stars-uk-tech-2015/'
     ],
     gallery: [
       'Feature photos of appearances, talks, and events.',
