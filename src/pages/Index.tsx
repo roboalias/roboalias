@@ -81,7 +81,7 @@ const Index = () => {
       'Crowdfunding your startup: a founder\'s perspective',
       'https://www.uktech.news/need-to-know-2/crowdfunding-your-tech-startup-founders-perspective-20140213'
     ],
-    speaking: [
+    talks: [
       'Shoptalk 2018',
       'https://youtu.be/TuzNpVBF5Ak',
       'Groceryshop 2019',
