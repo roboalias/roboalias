@@ -78,8 +78,12 @@ const Index = () => {
       'https://patents.google.com/patent/US20220207505A1'
     ],
     publications: [
+      'Preprints',
+      '',
       'On the Order and Evolution of Robotkind',
       'https://www.techrxiv.org/doi/full/10.36227/techrxiv.172373477.73979469/v1',
+      '',
+      'Articles',
       '',
       'How to win in the autonomous taxi space',
       'https://techcrunch.com/2017/09/14/how-to-win-in-the-autonomous-taxi-space/',
