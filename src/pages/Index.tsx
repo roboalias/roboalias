@@ -6,7 +6,7 @@ import ContentSection from '@/components/ContentSection';
 const Index = () => {
   const sections = [
     'bio', 'startups', 'publications',
-    'speaking', 'media', 'mentorship', 'awards', 'gallery', 'contact'
+    'speaking', 'media', 'awards', 'gallery', 'contact'
   ];
 
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -136,18 +136,6 @@ const Index = () => {
       'https://www.businessbecause.com/news/mba-entrepreneurs/2741/mba-entrepreneur-finds-pictures-tell-a-thousand-words',
       'Futurist Valley',
       'https://futuristvalley.com/futurists/'
-    ],
-    mentorship: [
-      'President of the L.A. Philanthropic Alumni Chapter at Lancaster University',
-      'https://www.lancaster.ac.uk',
-      'Startup Mentor at Singularity University',
-      'https://su.org',
-      'Startup Mentor at Founder Institute',
-      'https://fi.co',
-      'Startup Mentor at National Incubation Centre',
-      'https://nicislamabad.com',
-      'Startup Mentor at Wayra',
-      'https://wayra.com'
     ],
     awards: [
       'EB1A Alien of Extraordinary Abilities (2019)',
