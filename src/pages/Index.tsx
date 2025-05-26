@@ -81,14 +81,14 @@ const Index = () => {
       'Crowdfunding your startup: a founder\'s perspective',
       'https://www.uktech.news/need-to-know-2/crowdfunding-your-tech-startup-founders-perspective-20140213'
     ],
-    talks: [
-      'Talk at Shoptalk 2018',
+    speaking: [
+      'Shoptalk 2018',
       'https://youtu.be/TuzNpVBF5Ak',
-      'Talk at Groceryshop 2019',
+      'Groceryshop 2019',
       'https://youtu.be/zPf6hL-VUcc',
-      'Talk at Groceryshop 2021',
+      'Groceryshop 2021',
       'https://youtu.be/EtkGIv3q-Qs',
-      'Talk at Petersen Automotive Museum Launch Event',
+      'Petersen Automotive Museum Launch Event',
       'https://youtu.be/uDk0Mo_Yjlg'
     ],
     media: [
