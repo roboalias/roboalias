@@ -51,12 +51,29 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
     return headings.includes(line.trim());
   };
 
+  const isImage = (line: string) => {
+    return line.startsWith('/lovable-uploads/') && (line.endsWith('.png') || line.endsWith('.jpg') || line.endsWith('.jpeg'));
+  };
+
   const renderLine = (line: string, index: number) => {
     // Handle empty lines by rendering them with proper spacing
     if (line.trim() === '') {
       return (
         <div key={index} className="text-sm leading-relaxed">
           &nbsp;
+        </div>
+      );
+    }
+
+    // Handle images
+    if (isImage(line)) {
+      return (
+        <div key={index} className="my-4">
+          <img 
+            src={line} 
+            alt="Systema Robotica book cover" 
+            className="max-w-xs h-auto rounded-lg shadow-md"
+          />
         </div>
       );
     }

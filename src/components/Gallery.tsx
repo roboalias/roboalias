@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Carousel,
@@ -15,10 +14,6 @@ const Gallery = () => {
     {
       src: "/lovable-uploads/03297fbb-75e3-4a12-b890-6682fbc2de36.png",
       alt: "Ali Ahmed with Robomart self-driving store at exhibition"
-    },
-    {
-      src: "/lovable-uploads/558fe4d4-afa7-4c35-87ce-1a04d2a6a553.png",
-      alt: "Ali Ahmed speaking at conference"
     },
     {
       src: "/lovable-uploads/70f066ee-b896-4505-89f7-e841488d269e.png",
