@@ -20,10 +20,6 @@ const Gallery = () => {
 
   const images = [
     {
-      src: "/lovable-uploads/6b7ccd1a-d936-4651-a0d2-caff26fcdaea.png",
-      alt: "Ali Ahmed with Robomart at recent event"
-    },
-    {
       src: "/lovable-uploads/f463beb9-ef1f-4417-a29a-eb7bb14d870c.png",
       alt: "Ali Ahmed being interviewed on KTLA5 Morning News with Robomart vehicle"
     },
