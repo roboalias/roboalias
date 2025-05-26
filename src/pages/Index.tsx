@@ -20,9 +20,6 @@ const Index = () => {
       'Robotics expert to Wefunder.',
       'Angel investor in robotics startups.',
       'Startup mentor at Singularity University, FI, NIC, Wayra.',
-      'https://fi.co',
-      'https://nicislamabad.com',
-      'https://wayra.com',
       '',
       'PhD Dropout. Double Masters MSc + MBA.',
       'Management, Computing, Design, Marketing.'
