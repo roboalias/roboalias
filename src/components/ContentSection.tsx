@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ExternalLink } from 'lucide-react';
 import Gallery from './Gallery';
@@ -44,7 +45,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
           return prev;
         }
       });
-    }, 150);
+    }, 50);
 
     return () => clearInterval(timer);
   }, [section, content.length]);

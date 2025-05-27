@@ -21,7 +21,7 @@ const Index = () => {
       'Angel investor in robotics startups.',
       'Startup mentor at Singularity University, FI, NIC, Wayra.',
       '',
-      'PhD Dropout. Double Masters MSc + MBA.',
+      'PhD (withdrawn). Double Masters (MSc + MBA).',
       'Management, Computing, Design, Marketing.',
       '',
       '/lovable-uploads/558fe4d4-afa7-4c35-87ce-1a04d2a6a553.png'
@@ -65,13 +65,13 @@ const Index = () => {
       '/lovable-uploads/281aeea0-3035-4fba-b3dc-097d4cb81ead.png'
     ],
     patents: [
-      'One tap/command grocery ordering via self-driving mini marts (granted)',
+      'One tap/command grocery ordering via self-driving mini marts',
       'https://patents.google.com/patent/US11227270B2',
-      'Social networking system and methods of implementation (granted)',
+      'Social networking system and methods of implementation',
       'https://patents.google.com/patent/US8943141B2',
-      'Sharing content on devices with reduced user actions (withdrawn)',
+      'Sharing content on devices with reduced user actions',
       'https://patents.google.com/patent/EP2887686A1',
-      'Sensor-based tracking of vehicle content (abandoned)',
+      'Sensor-based tracking of vehicle content',
       'https://patents.google.com/patent/US20220207505A1'
     ],
     publications: [
@@ -153,9 +153,7 @@ const Index = () => {
     contact: [
       'LinkedIn: https://www.linkedin.com/in/roboticali/',
       'X: https://x.com/robotica1i',
-      'GitHub: https://github.com/robotica1i',
-      '',
-      'For press inquiries and speaking engagements, kindly reach out via LinkedIn or X.'
+      'GitHub: https://github.com/robotica1i'
     ]
   };
 
