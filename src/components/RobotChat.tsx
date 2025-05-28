@@ -27,7 +27,7 @@ const RobotChat = () => {
       {/* Robot character */}
       <div 
         className={`fixed right-4 z-50 cursor-pointer transition-all duration-300 ease-out
-          ${isChatOpen ? 'bottom-[26rem]' : 'bottom-0 hover:bottom-2 md:bottom-[-2rem] md:hover:bottom-0'}
+          ${isChatOpen ? 'bottom-[30rem]' : 'bottom-4 hover:bottom-6 md:bottom-[-1rem] md:hover:bottom-1'}
         `}
         onClick={toggleChat}
       >
@@ -35,7 +35,11 @@ const RobotChat = () => {
           <img 
             src="/lovable-uploads/53bc5b49-6b02-484c-969d-d8c1445dd949.png" 
             alt="Robot Assistant" 
-            className="w-16 h-16 object-contain hover:scale-110 transition-transform duration-200"
+            className={`w-16 h-16 object-contain transition-all duration-200 ${
+              isChatOpen 
+                ? 'hover:opacity-80' 
+                : 'hover:scale-110'
+            }`}
           />
           
           {/* Hover hint */}
