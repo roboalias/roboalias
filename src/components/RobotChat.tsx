@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const RobotChat = () => {
@@ -27,7 +28,7 @@ const RobotChat = () => {
       <div 
         className={`fixed z-50 cursor-pointer transition-all duration-300 ease-out
           ${isChatOpen 
-            ? 'bottom-[29rem] right-8' 
+            ? 'bottom-[29rem] right-6' 
             : 'right-4 bottom-4 hover:bottom-6 md:bottom-[-1rem] md:hover:bottom-1'
           }
         `}
