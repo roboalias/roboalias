@@ -27,7 +27,7 @@ const RobotChat = () => {
       {/* Robot character */}
       <div 
         className={`fixed right-4 z-50 cursor-pointer transition-all duration-300 ease-out
-          ${isChatOpen ? 'bottom-[30rem]' : 'bottom-4 hover:bottom-6 md:bottom-[-1rem] md:hover:bottom-1'}
+          ${isChatOpen ? 'bottom-[29rem]' : 'bottom-4 hover:bottom-6 md:bottom-[-1rem] md:hover:bottom-1'}
         `}
         onClick={toggleChat}
       >
@@ -37,7 +37,7 @@ const RobotChat = () => {
             alt="Robot Assistant" 
             className={`w-16 h-16 object-contain transition-all duration-200 ${
               isChatOpen 
-                ? 'hover:opacity-80' 
+                ? 'hover:opacity-70 hover:brightness-110' 
                 : 'hover:scale-110'
             }`}
           />
