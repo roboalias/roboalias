@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TerminalHeader from '@/components/TerminalHeader';
 import NavigationMenu from '@/components/NavigationMenu';
 import ContentSection from '@/components/ContentSection';
@@ -168,6 +167,22 @@ const Index = () => {
     setShowMenu(true);
   };
 
+  // Load chatbase script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.innerHTML = `
+      (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="EzGv1k263RlVeolWtnpHd";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    `;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-foreground p-6 md:p-12 max-w-6xl mx-auto">
       <div onClick={handleTerminalClick} className="cursor-pointer">
@@ -187,15 +202,6 @@ const Index = () => {
           content={contentData[activeSection] || []}
         />
       )}
-
-      {/* Embedded iframe in bottom right corner */}
-      <iframe
-        src="https://www.chatbase.co/chatbot-iframe/EzGv1k263RlVeolWtnpHd"
-        className="fixed bottom-4 right-4 z-50 w-80 h-96 rounded-lg shadow-lg border-0"
-        style={{ minHeight: '400px' }}
-        frameBorder="0"
-        title="Chatbot"
-      />
     </div>
   );
 };
