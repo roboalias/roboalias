@@ -33,7 +33,7 @@ const RobotChat = () => {
       >
         <div className="relative">
           <img 
-            src="/lovable-uploads/558fe4d4-afa7-4c35-87ce-1a04d2a6a553.png" 
+            src="/lovable-uploads/53bc5b49-6b02-484c-969d-d8c1445dd949.png" 
             alt="Robot Assistant" 
             className="w-16 h-16 object-contain hover:scale-110 transition-transform duration-200"
           />
