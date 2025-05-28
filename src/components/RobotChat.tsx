@@ -37,7 +37,7 @@ const RobotChat = () => {
             alt="Robot Assistant" 
             className={`w-16 h-16 object-contain transition-all duration-200 ${
               isChatOpen 
-                ? 'hover:opacity-70 hover:brightness-110' 
+                ? 'hover:opacity-40 hover:scale-105 hover:rotate-3' 
                 : 'hover:scale-110'
             }`}
           />
