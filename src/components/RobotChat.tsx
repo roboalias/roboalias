@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const RobotChat = () => {
@@ -26,8 +25,11 @@ const RobotChat = () => {
 
       {/* Robot character */}
       <div 
-        className={`fixed right-4 z-50 cursor-pointer transition-all duration-300 ease-out
-          ${isChatOpen ? 'bottom-[29rem]' : 'bottom-4 hover:bottom-6 md:bottom-[-1rem] md:hover:bottom-1'}
+        className={`fixed z-50 cursor-pointer transition-all duration-300 ease-out
+          ${isChatOpen 
+            ? 'bottom-[29rem] right-8' 
+            : 'right-4 bottom-4 hover:bottom-6 md:bottom-[-1rem] md:hover:bottom-1'
+          }
         `}
         onClick={toggleChat}
       >
