@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import TerminalHeader from '@/components/TerminalHeader';
 import NavigationMenu from '@/components/NavigationMenu';
@@ -186,6 +187,15 @@ const Index = () => {
           content={contentData[activeSection] || []}
         />
       )}
+
+      {/* Embedded iframe in bottom right corner */}
+      <iframe
+        src="https://www.chatbase.co/chatbot-iframe/EzGv1k263RlVeolWtnpHd"
+        className="fixed bottom-4 right-4 z-50 w-80 h-96 rounded-lg shadow-lg border-0"
+        style={{ minHeight: '400px' }}
+        frameBorder="0"
+        title="Chatbot"
+      />
     </div>
   );
 };
