@@ -1,14 +1,12 @@
 
 
-## Add New Speaking Entry
+## Update Speaking Entry Title
 
-Add "Keynote 2025 SCM Fair" as the first entry in the `speaking` section of `src/pages/Index.tsx`.
+Change the title of the first speaking entry from "Keynote 2025 SCM Fair" to "Keynote Speech at the 2025 SCM Fair" in `src/pages/Index.tsx`.
 
 ### Technical Details
 
-In the `contentData.speaking` array, insert two new lines at the top:
-1. `'Keynote 2025 SCM Fair'`
-2. `'https://youtu.be/QEvpDONaxUI'`
-
-This follows the existing pattern where each entry is a title line followed by a URL line.
+Update line 96 in `src/pages/Index.tsx`:
+- From: `'Keynote 2025 SCM Fair'`
+- To: `'Keynote Speech at the 2025 SCM Fair'`
 
