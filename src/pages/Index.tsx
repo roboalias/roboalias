@@ -154,7 +154,7 @@ const Index = () => {
       ''
     ],
     contact: [
-      'LinkedIn: https://www.linkedin.com/in/roboticali/',
+      'LinkedIn: https://www.linkedin.com/in/roboalias/',
       'X: https://x.com/robotica1i',
       'GitHub: https://github.com/robotica1i'
     ]

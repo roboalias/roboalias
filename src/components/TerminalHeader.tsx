@@ -16,7 +16,7 @@ const TerminalHeader: React.FC<TerminalHeaderProps> = ({ activeSection }) => {
           Roboticist. Founder. Inventor.
         </p>
         <div className="text-terminal-blue text-sm">
-          <span className="text-terminal-gray">~/</span>roboticali 
+          <span className="text-terminal-gray">~/</span>roboalias 
           {activeSection && (
             <>
               <span className="text-terminal-gray"> &gt; </span>
