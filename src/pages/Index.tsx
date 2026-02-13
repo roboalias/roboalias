@@ -93,6 +93,8 @@ const Index = () => {
       'https://www.uktech.news/need-to-know-2/crowdfunding-your-tech-startup-founders-perspective-20140213'
     ],
     speaking: [
+      'Keynote 2025 SCM Fair',
+      'https://youtu.be/QEvpDONaxUI',
       'Shoptalk 2018',
       'https://youtu.be/TuzNpVBF5Ak',
       'Groceryshop 2019',
