@@ -31,17 +31,17 @@ const RobotChat = () => {
     setIsLoading(true);
 
     let assistantSoFar = '';
+    let assistantStarted = false;
     const upsertAssistant = (chunk: string) => {
       assistantSoFar += chunk;
       setMessages((prev) => {
-        const last = prev[prev.length - 1];
-        if (last?.role === 'assistant' && last.content !== '__seed__placeholder__') {
-          // only replace if we've started streaming
+        if (!assistantStarted) {
+          assistantStarted = true;
+          return [...prev, { role: 'assistant', content: assistantSoFar }];
         }
-        if (last?.role === 'assistant' && (prev.length > next.length)) {
-          return prev.map((m, i) => (i === prev.length - 1 ? { ...m, content: assistantSoFar } : m));
-        }
-        return [...prev, { role: 'assistant', content: assistantSoFar }];
+        return prev.map((m, i) =>
+          i === prev.length - 1 ? { ...m, content: assistantSoFar } : m
+        );
       });
     };
 
