@@ -116,7 +116,7 @@ const RobotChat = () => {
   return (
     <>
       {isChatOpen && (
-        <div className="fixed bottom-20 right-4 z-40 w-[22rem] max-w-[calc(100vw-2rem)] h-[28rem] bg-background rounded-lg shadow-2xl border border-border flex flex-col animate-fade-in overflow-hidden">
+        <div className="fixed bottom-20 right-4 z-40 w-[32rem] max-w-[calc(100vw-2rem)] h-[32rem] bg-background rounded-lg shadow-2xl border border-border flex flex-col animate-fade-in overflow-hidden">
           <div className="flex items-center justify-between px-4 py-2 border-b border-border bg-muted/50">
             <div className="flex flex-col">
               <span className="text-sm font-semibold text-foreground">Ali's Assistant</span>
