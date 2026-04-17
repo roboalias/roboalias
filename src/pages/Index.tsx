@@ -137,8 +137,6 @@ const Index = () => {
       'https://theshobeirshow.com/podcast-item/episode-29-ali-ahmed-ceo-of-robomart/',
       'Entrepreneur Magazine',
       'https://www.entrepreneur.com/starting-a-business/self-driving-shops-on-wheels-are-heading-to-your/472141',
-      'Business Because',
-      'https://www.businessbecause.com/news/mba-entrepreneurs/2741/mba-entrepreneur-finds-pictures-tell-a-thousand-words'
     ],
     awards: [
       'Futurist at Futurist Valley (2024)',
