@@ -15,7 +15,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
   // Preload images when section changes
   useEffect(() => {
     const imageUrls = content.filter(line => 
-      line.startsWith('/lovable-uploads/') && (line.endsWith('.png') || line.endsWith('.jpg') || line.endsWith('.jpeg'))
+      line.startsWith('/images/') && (line.endsWith('.png') || line.endsWith('.jpg') || line.endsWith('.jpeg'))
     );
 
     if (imageUrls.length > 0) {
@@ -75,7 +75,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, content }) => 
   };
 
   const isImage = (line: string) => {
-    return line.startsWith('/lovable-uploads/') && (line.endsWith('.png') || line.endsWith('.jpg') || line.endsWith('.jpeg'));
+    return line.startsWith('/images/') && (line.endsWith('.png') || line.endsWith('.jpg') || line.endsWith('.jpeg'));
   };
 
   const renderLine = (line: string, index: number) => {

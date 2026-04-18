@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import TerminalHeader from '@/components/TerminalHeader';
 import NavigationMenu from '@/components/NavigationMenu';
 import ContentSection from '@/components/ContentSection';
-import RobotChat from '@/components/RobotChat';
 
 const Index = () => {
   const sections = [
@@ -25,7 +24,7 @@ const Index = () => {
       'PhD (withdrawn). Double Masters (MSc + MBA).',
       'Management, Computing, Design, Marketing.',
       '',
-      '/lovable-uploads/558fe4d4-afa7-4c35-87ce-1a04d2a6a553.png'
+      '/images/558fe4d4-afa7-4c35-87ce-1a04d2a6a553.png'
     ],
     startups: [
       'Founded',
@@ -63,7 +62,7 @@ const Index = () => {
       'Audible',
       'https://www.audible.com/pd/Systema-Robotica-Audiobook/B0DG6XFN1V',
       '',
-      '/lovable-uploads/281aeea0-3035-4fba-b3dc-097d4cb81ead.png'
+      '/images/281aeea0-3035-4fba-b3dc-097d4cb81ead.png'
     ],
     patents: [
       'One tap/command grocery ordering via self-driving mini marts',
@@ -187,8 +186,6 @@ const Index = () => {
           content={contentData[activeSection] || []}
         />
       )}
-
-      <RobotChat />
     </div>
   );
 };
