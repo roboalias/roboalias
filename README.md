@@ -2,7 +2,7 @@
 
 Cofounder & CEO of [Robomart](https://robomart.ai) -- inventor of the self-driving store.
 
-Roboticist. Inventor. Author. Angel investor.
+Roboticist. Inventor. Author.
 
 ## Work
 
@@ -10,6 +10,15 @@ Roboticist. Inventor. Author. Angel investor.
 - **[Systema Robotica](https://www.systemarobotica.com)** -- a treatise on the order and evolution of robotkind ([Amazon](https://www.amazon.com/dp/B0DBHB22GM) / [Audible](https://www.audible.com/pd/Systema-Robotica-Audiobook/B0DG6XFN1V))
 - **Dispatch Messenger** -- on-demand messenger service (founder & CEO)
 - **Lutebox** -- social content platform (cofounder & CEO)
+
+## Past Advisory Roles
+
+- Robotics expert at Wefunder
+- Mentor at Singularity University
+- Mentor at Founder Institute
+- Mentor at Lisbon Challenge
+- Mentor at Wayra
+- Mentor at National Incubation Center
 
 ## Patents
 
