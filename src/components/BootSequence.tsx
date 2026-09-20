@@ -60,7 +60,7 @@ const BootSequence = ({ mode, onComplete }: BootSequenceProps) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="font-mono text-sm text-muted-foreground space-y-1 min-w-[340px] max-w-[500px] px-6">
+      <div className="font-mono text-sm text-muted-foreground space-y-1 w-full max-w-[500px] px-6">
         {lines.slice(0, visibleLines).map((line, i) => (
           <div key={i} className="flex justify-between gap-6">
             <span className={i === 0 && mode === "boot" ? "text-foreground font-bold" : ""}>
