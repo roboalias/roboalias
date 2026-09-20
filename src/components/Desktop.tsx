@@ -270,22 +270,20 @@ const Desktop = ({ onSleep, onRestart }: DesktopProps) => {
   const musicPlayer = useMusicPlayer(infected);
 
   const tryEmbed = useCallback((e: React.MouseEvent, href: string) => {
-    let embeddable = false;
     let isVideo = false;
     let embedUrl = href;
     try {
       const u = new URL(href);
-      embeddable = /(^|\.)(youtube\.com|youtu\.be|spotify\.com|robomart\.ai|systemarobotica\.com)$/.test(u.hostname);
-      isVideo = /youtube\.com$|youtu\.be$|spotify\.com$/.test(u.hostname);
+      if (!/^https?:$/.test(u.protocol)) return;
+      isVideo = /(^|\.)youtube\.com$|(^|\.)youtu\.be$|(^|\.)spotify\.com$/.test(u.hostname);
       if (isVideo) {
-        if (u.hostname === "youtu.be" || u.hostname.endsWith("youtube.com")) {
+        if (u.hostname === "youtu.be" || (u.hostname.endsWith("youtube.com") && u.pathname === "/watch")) {
           const id = u.hostname === "youtu.be" ? u.pathname.slice(1) : u.searchParams.get("v");
-          if (u.hostname === "youtu.be" || u.pathname === "/watch") embedUrl = `https://www.youtube.com/embed/${id}`;
+          if (id) embedUrl = `https://www.youtube.com/embed/${id}`;
         }
         if (u.hostname.endsWith("spotify.com")) embedUrl = `https://open.spotify.com/embed${u.pathname}`;
       }
-    } catch { embeddable = false; }
-    if (!embeddable) return;
+    } catch { return; }
     e.preventDefault();
     let display = href;
     try { const u = new URL(href); display = u.hostname.replace(/^www\./, "") + (u.pathname.length > 1 ? u.pathname : ""); } catch {}
