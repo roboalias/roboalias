@@ -33,13 +33,13 @@ const desktopItems = [
     size: { width: 500, height: 240 },
   },
   {
-    id: "thesis",
+    id: "mission",
     icon: Lightbulb,
     iconName: "Lightbulb",
-    label: "thesis",
-    title: "thesis",
+    label: "mission",
+    title: "mission",
     content: {
-      text: "ai agents will move goods the way they move information. [robomart](https://robomart.ai) is building that rail: america's first robocourier network — the delivery layer for the agentic economy.",
+      text: "ai and robotics will deliver the physical internet — a world where goods move as freely as information.",
     },
     size: { width: 560, height: 300 },
   },
