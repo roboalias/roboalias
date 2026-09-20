@@ -20,8 +20,8 @@ const desktopItems = [
     iconName: "User",
     label: "identity",
     title: "identity",
-    content: { text: "roboticist. cofounder & CEO of Robomart. inventor of the self-driving store. author of Systema Robotica." },
-    size: { width: 480, height: 200 },
+    content: { text: "founder. roboticist. inventor. author." },
+    size: { width: 480, height: 160 },
   },
   {
     id: "role",
