@@ -20,7 +20,7 @@ const desktopItems = [
     iconName: "User",
     label: "identity",
     title: "identity",
-    content: { text: "founder. roboticist. inventor. author." },
+    content: { text: "roboticist. founder. inventor. author." },
     size: { width: 480, height: 160 },
   },
   {
