@@ -47,7 +47,7 @@ const NowPlayingTicker = ({ nowPlaying, infected = false }: { nowPlaying: NowPla
 
   return (
     <div className="flex items-center gap-1.5 px-2 max-w-[200px]">
-      <img src={nowPlaying.cover} alt="" className="w-5 h-5 rounded-sm object-cover flex-shrink-0" />
+      <img src={nowPlaying.cover} alt="" className="w-5 h-5 rounded-none object-cover flex-shrink-0" />
       <div className="overflow-hidden flex-1 min-w-0">
         <div className={`whitespace-nowrap text-[10px] text-muted-foreground ${nowPlaying.isPlaying ? "marquee-scroll" : ""}`}>
           {displayText}
@@ -93,21 +93,21 @@ const Taskbar = ({ windows, onClickWindow, onLogoClick, onSleep, onRestart, nowP
         >
           <button
             onClick={onLogoClick}
-            className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded text-xs text-foreground hover:bg-muted/50 transition-colors"
+            className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-none text-xs text-foreground hover:bg-muted/50 transition-colors"
           >
             <Mail className="w-3.5 h-3.5" />
             Compose
           </button>
           <button
             onClick={onSleep}
-            className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded text-xs text-foreground hover:bg-muted/50 transition-colors"
+            className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-none text-xs text-foreground hover:bg-muted/50 transition-colors"
           >
             <Moon className="w-3.5 h-3.5" />
             Sleep
           </button>
           <button
             onClick={onRestart}
-            className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded text-xs text-foreground hover:bg-muted/50 transition-colors"
+            className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-none text-xs text-foreground hover:bg-muted/50 transition-colors"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             Restart

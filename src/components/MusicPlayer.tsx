@@ -26,7 +26,7 @@ const MusicPlayer = ({ player, infected = false }: MusicPlayerProps) => {
         <img
           src={currentTrack.cover}
           alt={currentTrack.title}
-          className="w-20 h-20 rounded-md object-cover border border-border/40"
+          className="w-20 h-20 rounded-none object-cover border border-border/40"
         />
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-foreground truncate"><ScrambleText text={currentTrack.title} infected={infected} /></p>
@@ -37,7 +37,7 @@ const MusicPlayer = ({ player, infected = false }: MusicPlayerProps) => {
       {/* Progress */}
       <div className="flex flex-col gap-1">
         <div
-          className="relative h-1.5 w-full bg-muted rounded-full cursor-pointer overflow-hidden"
+          className="relative h-1.5 w-full bg-muted rounded-none cursor-pointer overflow-hidden"
           onClick={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
             const pct = (e.clientX - rect.left) / rect.width;
@@ -45,7 +45,7 @@ const MusicPlayer = ({ player, infected = false }: MusicPlayerProps) => {
           }}
         >
           <div
-            className="absolute inset-y-0 left-0 bg-accent-icon rounded-full transition-[width] duration-200"
+            className="absolute inset-y-0 left-0 bg-accent-icon rounded-none transition-[width] duration-200"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -62,7 +62,7 @@ const MusicPlayer = ({ player, infected = false }: MusicPlayerProps) => {
         </button>
         <button
           onClick={toggle}
-          className="w-9 h-9 rounded-full bg-accent-icon/15 hover:bg-accent-icon/25 flex items-center justify-center text-foreground transition-colors"
+          className="w-9 h-9 rounded-none bg-accent-icon/15 hover:bg-accent-icon/25 flex items-center justify-center text-foreground transition-colors"
         >
           {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
         </button>
@@ -77,7 +77,7 @@ const MusicPlayer = ({ player, infected = false }: MusicPlayerProps) => {
           <button
             key={i}
             onClick={() => selectTrack(i)}
-            className={`w-full flex items-center gap-3 px-3 py-2 rounded-md text-left transition-colors ${
+            className={`w-full flex items-center gap-3 px-3 py-2 rounded-none text-left transition-colors ${
               i === currentIndex
                 ? "bg-accent-icon/10 text-foreground"
                 : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"

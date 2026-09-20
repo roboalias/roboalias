@@ -74,7 +74,7 @@ const ThinkingIndicator = () => {
   return (
     <span className="inline-flex items-center gap-2">
       <motion.span
-        className="inline-block w-1.5 h-1.5 rounded-full bg-accent-icon"
+        className="inline-block w-1.5 h-1.5 rounded-none bg-accent-icon"
         animate={{ opacity: [1, 0.3, 1] }}
         transition={{ duration: 1.4, repeat: Infinity }}
       />
@@ -190,7 +190,7 @@ const Terminal = ({ commands, embedded = false, onAction }: TerminalProps) => {
   const isBusy = thinking || typing || typingFollowUp;
 
   return (
-    <div className={embedded ? "flex flex-col h-full" : "w-full sm:w-[720px] h-[500px] flex flex-col border border-border/50 rounded-xl overflow-hidden bg-background/80 backdrop-blur-xl shadow-[0_0_80px_-20px_hsl(var(--accent-icon)/0.15)]"}>
+    <div className={embedded ? "flex flex-col h-full" : "w-full sm:w-[720px] h-[500px] flex flex-col border border-border/50 rounded-none overflow-hidden bg-background/80 backdrop-blur-xl shadow-[0_0_80px_-20px_hsl(var(--accent-icon)/0.15)]"}>
       {!embedded && (
         <div className="flex items-center justify-between px-4 py-2 border-b border-border/40 bg-muted/20">
           <div className="flex items-center gap-2">
@@ -198,9 +198,9 @@ const Terminal = ({ commands, embedded = false, onAction }: TerminalProps) => {
             <span className="text-xs font-medium tracking-tight text-muted-foreground">roboalias</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-            <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-            <div className="w-2.5 h-2.5 rounded-full bg-foreground/20" />
+            <div className="w-2.5 h-2.5 rounded-none bg-red-400/80" />
+            <div className="w-2.5 h-2.5 rounded-none bg-yellow-400/80" />
+            <div className="w-2.5 h-2.5 rounded-none bg-foreground/20" />
           </div>
         </div>
       )}
@@ -289,13 +289,13 @@ const Terminal = ({ commands, embedded = false, onAction }: TerminalProps) => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 6, scale: 0.97 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              className="absolute bottom-full left-5 mb-1.5 z-50 min-w-[200px] rounded-lg border border-border/50 bg-popover/95 backdrop-blur-md shadow-lg py-1.5"
+              className="absolute bottom-full left-5 mb-1.5 z-50 min-w-[200px] rounded-none border border-border/50 bg-popover/95 backdrop-blur-md shadow-lg py-1.5"
             >
               {availableCommands.map((cmd) => (
                 <button
                   key={cmd.label}
                   onClick={() => handleSelectCommand(cmd)}
-                  className="w-full text-left px-3 py-2 text-sm text-popover-foreground hover:bg-accent/50 hover:text-accent-foreground transition-colors rounded-md mx-0"
+                  className="w-full text-left px-3 py-2 text-sm text-popover-foreground hover:bg-accent/50 hover:text-accent-foreground transition-colors rounded-none mx-0"
                 >
                   {cmd.label}
                 </button>

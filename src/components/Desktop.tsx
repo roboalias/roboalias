@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { User, Briefcase, Lightbulb, BookOpen, BookMarked, FileText, Newspaper, Mic, Link, TerminalSquare, Music, Github } from "lucide-react";
+import { User, Briefcase, Lightbulb, BookOpen, BookMarked, FileText, Newspaper, Mic, Link, TerminalSquare, Music, Github, Globe } from "lucide-react";
+import BrowserWindow from "@/components/BrowserWindow";
 import { useWindowManager } from "@/hooks/useWindowManager";
 import { useMusicPlayer } from "@/hooks/useMusicPlayer";
 import DesktopIcon from "@/components/DesktopIcon";
@@ -265,7 +266,32 @@ const Desktop = ({ onSleep, onRestart }: DesktopProps) => {
   const [selectedIcon, setSelectedIcon] = useState<string | null>(null);
   const [infected, setInfected] = useState(false);
   const [shaking, setShaking] = useState(false);
+  const [browserTarget, setBrowserTarget] = useState<{ embedUrl: string; rawUrl: string; display: string } | null>(null);
   const musicPlayer = useMusicPlayer(infected);
+
+  const tryEmbed = useCallback((e: React.MouseEvent, href: string) => {
+    let embeddable = false;
+    let isVideo = false;
+    let embedUrl = href;
+    try {
+      const u = new URL(href);
+      embeddable = /(^|\.)(youtube\.com|youtu\.be|spotify\.com|robomart\.ai|systemarobotica\.com)$/.test(u.hostname);
+      isVideo = /youtube\.com$|youtu\.be$|spotify\.com$/.test(u.hostname);
+      if (isVideo) {
+        if (u.hostname === "youtu.be" || u.hostname.endsWith("youtube.com")) {
+          const id = u.hostname === "youtu.be" ? u.pathname.slice(1) : u.searchParams.get("v");
+          if (u.hostname === "youtu.be" || u.pathname === "/watch") embedUrl = `https://www.youtube.com/embed/${id}`;
+        }
+        if (u.hostname.endsWith("spotify.com")) embedUrl = `https://open.spotify.com/embed${u.pathname}`;
+      }
+    } catch { embeddable = false; }
+    if (!embeddable) return;
+    e.preventDefault();
+    let display = href;
+    try { const u = new URL(href); display = u.hostname.replace(/^www\./, "") + (u.pathname.length > 1 ? u.pathname : ""); } catch {}
+    setBrowserTarget({ embedUrl, rawUrl: href, display });
+    openWindow("browser", "internet explorer", isVideo ? { width: 760, height: 560 } : { width: 960, height: 680 }, { x: 180, y: 50 }, "Globe");
+  }, [openWindow]);
 
 
   const handleDesktopClick = useCallback(() => {
@@ -365,6 +391,7 @@ const Desktop = ({ onSleep, onRestart }: DesktopProps) => {
             href={link[2]}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => tryEmbed(e, link[2])}
             className="text-accent-icon underline underline-offset-4 decoration-accent-icon/40 hover:decoration-accent-icon transition-colors"
           >
             <ScrambleText text={link[1]} infected={infected} />
@@ -387,6 +414,10 @@ const Desktop = ({ onSleep, onRestart }: DesktopProps) => {
   };
 
   const renderWindowContent = (winId: string) => {
+    if (winId === "browser") {
+      return browserTarget ? <BrowserWindow embedUrl={browserTarget.embedUrl} rawUrl={browserTarget.rawUrl} display={browserTarget.display} /> : null;
+    }
+
     if (winId === "contact") {
       return <ContactWindow />;
     }
@@ -417,6 +448,7 @@ const Desktop = ({ onSleep, onRestart }: DesktopProps) => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => tryEmbed(e, link.href)}
                     className="text-accent-icon underline underline-offset-4 decoration-accent-icon/40 hover:decoration-accent-icon transition-colors text-[15px]"
                   >
                     <ScrambleText text={link.label} infected={infected} />

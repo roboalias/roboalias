@@ -165,7 +165,7 @@ const GitHubWidget = ({ infected }: GitHubWidgetProps) => {
     >
       {/* Title bar */}
       <div className="flex items-center gap-2 mb-3 text-xs font-mono text-muted-foreground">
-        <span className="w-2 h-2 rounded-full bg-accent-icon animate-pulse" />
+        <span className="w-2 h-2 rounded-none bg-accent-icon animate-pulse" />
         <ScrambleText text={`github/${USERNAME}`} infected={infected} />
       </div>
 

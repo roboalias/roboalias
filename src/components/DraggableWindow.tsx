@@ -80,9 +80,9 @@ const DraggableWindow = ({
         {/* Title bar */}
         <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/40 bg-muted/20">
           <div className="flex items-center gap-1.5">
-            <button onClick={onClose} className="w-3 h-3 rounded-full bg-red-400/80 hover:bg-red-500 transition-colors" />
-            <button onClick={onMinimize} className="w-3 h-3 rounded-full bg-yellow-400/80 hover:bg-yellow-500 transition-colors" />
-            <div className="w-3 h-3 rounded-full bg-foreground/20" />
+            <button onClick={onClose} className="w-3 h-3 rounded-none bg-red-400/80 hover:bg-red-500 transition-colors" />
+            <button onClick={onMinimize} className="w-3 h-3 rounded-none bg-yellow-400/80 hover:bg-yellow-500 transition-colors" />
+            <div className="w-3 h-3 rounded-none bg-foreground/20" />
           </div>
           <span className="text-xs font-medium text-muted-foreground"><ScrambleText text={title} infected={infected} /></span>
           <div className="w-14" />
@@ -98,7 +98,7 @@ const DraggableWindow = ({
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 30 }}
-      className="absolute flex flex-col rounded-xl overflow-hidden border border-border/50 bg-background/80 backdrop-blur-xl shadow-[0_0_80px_-20px_hsl(var(--accent-icon)/0.15)]"
+      className="absolute flex flex-col rounded-none overflow-hidden border border-border/50 bg-background/80 backdrop-blur-xl shadow-[0_0_80px_-20px_hsl(var(--accent-icon)/0.15)]"
       style={{
         left: position.x,
         top: position.y,
@@ -120,13 +120,13 @@ const DraggableWindow = ({
         <div className="flex items-center gap-1.5">
           <button
             onClick={(e) => { e.stopPropagation(); onClose(); }}
-            className="w-2.5 h-2.5 rounded-full bg-red-400/80 hover:bg-red-500 transition-colors"
+            className="w-2.5 h-2.5 rounded-none bg-red-400/80 hover:bg-red-500 transition-colors"
           />
           <button
             onClick={(e) => { e.stopPropagation(); onMinimize(); }}
-            className="w-2.5 h-2.5 rounded-full bg-yellow-400/80 hover:bg-yellow-500 transition-colors"
+            className="w-2.5 h-2.5 rounded-none bg-yellow-400/80 hover:bg-yellow-500 transition-colors"
           />
-          <div className="w-2.5 h-2.5 rounded-full bg-foreground/20" />
+          <div className="w-2.5 h-2.5 rounded-none bg-foreground/20" />
         </div>
         <span className="text-xs font-medium text-muted-foreground select-none"><ScrambleText text={title} infected={infected} /></span>
         <div className="w-12" />
