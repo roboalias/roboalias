@@ -20,8 +20,8 @@ const desktopItems = [
     iconName: "User",
     label: "identity",
     title: "identity",
-    content: { text: "roboticist. founder. inventor. author." },
-    size: { width: 480, height: 160 },
+    content: { text: ["roboticist. founder. inventor. author.", "building the physical internet."] },
+    size: { width: 480, height: 200 },
   },
   {
     id: "role",
@@ -29,8 +29,8 @@ const desktopItems = [
     iconName: "Briefcase",
     label: "role",
     title: "role",
-    content: { text: "cofounder & CEO @robomart — self-driving stores on wheels, delivering everyday goods autonomously." },
-    size: { width: 500, height: 220 },
+    content: { text: "cofounder & ceo of robomart — America's first robocourier network. An agentic delivery layer that lets any app, retailer, or AI agent move goods autonomously." },
+    size: { width: 500, height: 240 },
   },
   {
     id: "thesis",
@@ -39,7 +39,7 @@ const desktopItems = [
     label: "thesis",
     title: "thesis",
     content: {
-      text: "the store should come to you. robomart operates a fleet of self-driving stores that drive to customers and sell on arrival. commerce at the speed of autonomy.",
+      text: "ai agents will move goods the way they move information. robomart is building that rail: america's first robocourier network — the delivery layer for the agentic economy.",
     },
     size: { width: 560, height: 300 },
   },
@@ -354,6 +354,17 @@ const Desktop = ({ onSleep, onRestart }: DesktopProps) => {
     }
   }, [infected, openWindow]);
 
+  const renderText = (t: string | string[]) => {
+    const lines = Array.isArray(t) ? t : [t];
+    return (
+      <div className="flex flex-col gap-3">
+        {lines.map((line, i) => (
+          <p key={i} className="text-[15px] leading-[1.7] text-foreground"><ScrambleText text={line} infected={infected} /></p>
+        ))}
+      </div>
+    );
+  };
+
   const renderWindowContent = (winId: string) => {
     if (winId === "contact") {
       return <ContactWindow />;
@@ -374,9 +385,7 @@ const Desktop = ({ onSleep, onRestart }: DesktopProps) => {
     if (item.content.linkGroups) {
       return (
         <div className="p-5 flex flex-col gap-5">
-          {item.content.text && (
-            <p className="text-[15px] leading-[1.7] text-foreground"><ScrambleText text={item.content.text} infected={infected} /></p>
-          )}
+          {item.content.text && renderText(item.content.text)}
           {item.content.linkGroups.map((group) => (
             <div key={group.heading}>
               <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">{group.heading}</p>
@@ -400,7 +409,7 @@ const Desktop = ({ onSleep, onRestart }: DesktopProps) => {
     }
     return (
       <div className="p-5">
-        <p className="text-[15px] leading-[1.7] text-foreground"><ScrambleText text={item.content.text!} infected={infected} /></p>
+        {renderText(item.content.text!)}
       </div>
     );
   };
