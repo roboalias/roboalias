@@ -29,7 +29,7 @@ const desktopItems = [
     iconName: "Briefcase",
     label: "role",
     title: "role",
-    content: { text: "cofounder & ceo of robomart — America's first robocourier network. An agentic delivery layer that lets any app, retailer, or AI agent move goods autonomously." },
+    content: { text: "cofounder & ceo of [robomart](https://robomart.ai) — America's first robocourier network. An agentic delivery layer that lets any app, retailer, or AI agent move goods autonomously." },
     size: { width: 500, height: 240 },
   },
   {
@@ -39,7 +39,7 @@ const desktopItems = [
     label: "thesis",
     title: "thesis",
     content: {
-      text: "ai agents will move goods the way they move information. robomart is building that rail: america's first robocourier network — the delivery layer for the agentic economy.",
+      text: "ai agents will move goods the way they move information. [robomart](https://robomart.ai) is building that rail: america's first robocourier network — the delivery layer for the agentic economy.",
     },
     size: { width: 560, height: 300 },
   },
@@ -61,7 +61,7 @@ const desktopItems = [
     label: "treatise",
     title: "treatise",
     content: {
-      text: "Systema Robotica — a treatise on the order and evolution of robotkind: humanity's guide to understanding and coexistence with robots in a future of non-human superintelligences. first edition now available in print and audio.",
+      text: "[Systema Robotica](https://www.systemarobotica.com) — a treatise on the order and evolution of robotkind: humanity's guide to understanding and coexistence with robots in a future of non-human superintelligences. first edition now available in print and audio.",
       linkGroups: [
         {
           heading: "read",
@@ -354,12 +354,33 @@ const Desktop = ({ onSleep, onRestart }: DesktopProps) => {
     }
   }, [infected, openWindow]);
 
+  const renderInline = (text: string) => {
+    const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g).filter(Boolean);
+    return parts.map((part, i) => {
+      const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (link) {
+        return (
+          <a
+            key={i}
+            href={link[2]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-icon underline underline-offset-4 decoration-accent-icon/40 hover:decoration-accent-icon transition-colors"
+          >
+            <ScrambleText text={link[1]} infected={infected} />
+          </a>
+        );
+      }
+      return <ScrambleText key={i} text={part} infected={infected} />;
+    });
+  };
+
   const renderText = (t: string | string[]) => {
     const lines = Array.isArray(t) ? t : [t];
     return (
       <div className="flex flex-col gap-3">
         {lines.map((line, i) => (
-          <p key={i} className="text-[15px] leading-[1.7] text-foreground"><ScrambleText text={line} infected={infected} /></p>
+          <p key={i} className="text-[15px] leading-[1.7] text-foreground">{renderInline(line)}</p>
         ))}
       </div>
     );
