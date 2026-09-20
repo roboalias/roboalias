@@ -447,19 +447,34 @@ const Desktop = ({ onSleep, onRestart }: DesktopProps) => {
         </div>
       </div>
 
-      {/* Desktop icons */}
-      <div className="absolute top-4 left-4 grid grid-cols-2 gap-2 z-10">
-        {desktopItems.map((item) => (
-          <DesktopIcon
-            key={item.id}
-            icon={item.icon}
-            label={item.label}
-            selected={selectedIcon === item.id}
-            onSelect={() => setSelectedIcon(item.id)}
-            onOpen={() => handleIconOpen(item.id, item.title, item.size)}
-            infected={infected}
-          />
-        ))}
+      {/* Desktop icons — 3 columns: content pairs + utility column */}
+      <div className="absolute top-4 left-4 flex gap-2 z-10">
+        <div className="grid grid-cols-2 gap-2">
+          {desktopItems.slice(0, 8).map((item) => (
+            <DesktopIcon
+              key={item.id}
+              icon={item.icon}
+              label={item.label}
+              selected={selectedIcon === item.id}
+              onSelect={() => setSelectedIcon(item.id)}
+              onOpen={() => handleIconOpen(item.id, item.title, item.size)}
+              infected={infected}
+            />
+          ))}
+        </div>
+        <div className="grid grid-cols-1 gap-2">
+          {desktopItems.slice(8).map((item) => (
+            <DesktopIcon
+              key={item.id}
+              icon={item.icon}
+              label={item.label}
+              selected={selectedIcon === item.id}
+              onSelect={() => setSelectedIcon(item.id)}
+              onOpen={() => handleIconOpen(item.id, item.title, item.size)}
+              infected={infected}
+            />
+          ))}
+        </div>
       </div>
 
 
