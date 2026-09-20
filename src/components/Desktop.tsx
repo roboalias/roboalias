@@ -34,13 +34,13 @@ const desktopItems = [
     size: { width: 500, height: 240 },
   },
   {
-    id: "mission",
+    id: "thesis",
     icon: Lightbulb,
     iconName: "Lightbulb",
-    label: "mission",
-    title: "mission",
+    label: "thesis",
+    title: "thesis",
     content: {
-      text: "ai and robotics are laying the rails of the physical internet — a world where goods move as freely as information. robomart is the delivery layer.",
+      text: "i build physical ai systems — the rails of the physical internet. autonomous + on-demand: goods move as freely as information, moved by agents that have a real place in the economy.",
     },
     size: { width: 560, height: 300 },
   },
