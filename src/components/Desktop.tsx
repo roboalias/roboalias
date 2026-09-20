@@ -29,7 +29,7 @@ const desktopItems = [
     iconName: "Briefcase",
     label: "role",
     title: "role",
-    content: { text: "cofounder & ceo of [robomart](https://robomart.ai) — America's first robocourier network. An agentic delivery layer that lets any app, retailer, or AI agent move goods autonomously." },
+    content: { text: "cofounder & ceo of [robomart](https://robomart.ai) — america's first robocourier network. an agentic delivery layer that lets any app, retailer, or AI agent move goods autonomously." },
     size: { width: 500, height: 240 },
   },
   {
@@ -39,7 +39,7 @@ const desktopItems = [
     label: "mission",
     title: "mission",
     content: {
-      text: "ai and robotics will deliver the physical internet — a world where goods move as freely as information.",
+      text: "ai and robotics are laying the rails of the physical internet — a world where goods move as freely as information. robomart is the delivery layer.",
     },
     size: { width: 560, height: 300 },
   },
