@@ -40,7 +40,7 @@ const desktopItems = [
     label: "thesis",
     title: "thesis",
     content: {
-      text: "i build physical ai systems — the rails of the physical internet. autonomous + on-demand: goods move as freely as information, moved by agents that have a real place in the economy.",
+      text: "autonomous + on-demand gives you agentic delivery. agentic delivery at scale is the physical internet — goods moving as freely as information. i'm laying its rails.",
     },
     size: { width: 560, height: 300 },
   },

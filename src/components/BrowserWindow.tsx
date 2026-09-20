@@ -10,6 +10,7 @@ interface BrowserWindowProps {
 export default function BrowserWindow({ embedUrl, rawUrl, display }: BrowserWindowProps) {
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     setLoaded(false);
@@ -34,7 +35,13 @@ export default function BrowserWindow({ embedUrl, rawUrl, display }: BrowserWind
           <ExternalLink className="w-3 h-3" />
         </a>
       </div>
-      <div className="relative flex-1 bg-background">
+      <div
+        className="relative flex-1 bg-background"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        {/* when the cursor is elsewhere, block iframe hover so player chrome hides immediately */}
+        <div className={`absolute inset-0 z-10 ${hovered ? "pointer-events-none" : ""}`} />
         {!loaded && !failed && (
           <div className="absolute inset-0 flex items-center justify-center font-mono text-xs text-muted-foreground animate-pulse">
             loading…
