@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ExternalLink, Lock } from "lucide-react";
+import { hostAllowsFraming } from "@/lib/embed";
 
 interface BrowserWindowProps {
   embedUrl: string;
@@ -8,17 +9,39 @@ interface BrowserWindowProps {
 }
 
 export default function BrowserWindow({ embedUrl, rawUrl, display }: BrowserWindowProps) {
+  const allow = hostAllowsFraming(embedUrl);
   const [loaded, setLoaded] = useState(false);
-  const [failed, setFailed] = useState(false);
+  const [failed, setFailed] = useState(!allow);
   const [hovered, setHovered] = useState(false);
+  const loadedRef = useRef(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
+    const ok = hostAllowsFraming(embedUrl);
+    loadedRef.current = false;
     setLoaded(false);
-    setFailed(false);
-    const t = setTimeout(() => setFailed((f) => (!f ? true : f)), 8000);
-    return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setFailed(!ok);
+    if (!ok) return;
+    const t = window.setTimeout(() => {
+      if (!loadedRef.current) setFailed(true);
+    }, 10000);
+    return () => window.clearTimeout(t);
   }, [embedUrl]);
+
+  const handleLoad = () => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+    try {
+      const href = iframe.contentWindow?.location.href ?? "about:blank";
+      if (href === "about:blank" || href === "about:srcdoc") return;
+    } catch {
+      // cross-origin document is present, so the site actually framed
+    }
+    loadedRef.current = true;
+    setLoaded(true);
+  };
+
+  const showFrame = allow && !failed;
 
   return (
     <div className="flex flex-col h-full">
@@ -40,15 +63,16 @@ export default function BrowserWindow({ embedUrl, rawUrl, display }: BrowserWind
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        {/* when the cursor is elsewhere, block iframe hover so player chrome hides immediately */}
-        <div className={`absolute inset-0 z-10 ${hovered ? "pointer-events-none" : ""}`} />
-        {!loaded && !failed && (
-          <div className="absolute inset-0 flex items-center justify-center font-mono text-xs text-muted-foreground animate-pulse">
+        {showFrame && loaded && (
+          <div className={`absolute inset-0 z-10 ${hovered ? "pointer-events-none" : ""}`} />
+        )}
+        {showFrame && !loaded && (
+          <div className="absolute inset-0 z-20 flex items-center justify-center font-mono text-xs text-muted-foreground animate-pulse bg-background">
             loading…
           </div>
         )}
-        {failed && !loaded && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center">
+        {failed && (
+          <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-3 p-6 text-center bg-background">
             <p className="font-mono text-xs text-muted-foreground">⚠ this site refuses to appear inside a window.</p>
             <a
               href={rawUrl}
@@ -60,15 +84,19 @@ export default function BrowserWindow({ embedUrl, rawUrl, display }: BrowserWind
             </a>
           </div>
         )}
-        <iframe
-          key={embedUrl}
-          src={embedUrl}
-          title={display}
-          className="absolute inset-0 w-full h-full border-0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          onLoad={() => setLoaded(true)}
-        />
+        {showFrame && (
+          <iframe
+            ref={iframeRef}
+            key={embedUrl}
+            src={embedUrl}
+            title={display}
+            className="absolute inset-0 w-full h-full border-0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            onLoad={handleLoad}
+            onError={() => setFailed(true)}
+          />
+        )}
       </div>
     </div>
   );
