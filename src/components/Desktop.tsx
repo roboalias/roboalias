@@ -40,7 +40,7 @@ const desktopItems = [
     label: "thesis",
     title: "thesis",
     content: {
-      text: "we are laying the rails of the physical internet — a world where goods move as freely as information and autonomous agents deliver anything on command.",
+      text: "we are laying the rails of the physical internet — where goods move as freely as information and autonomous agents deliver anything on command.",
     },
     size: { width: 560, height: 300 },
   },
