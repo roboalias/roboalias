@@ -40,7 +40,7 @@ const desktopItems = [
     label: "thesis",
     title: "thesis",
     content: {
-      text: "creating the rails for autonomous, agentic delivery — goods on command.",
+      text: "one internet moves bits. the next moves atoms. the physical internet — autonomous, agentic, on command.",
     },
     size: { width: 560, height: 300 },
   },
