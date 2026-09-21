@@ -40,7 +40,7 @@ const desktopItems = [
     label: "thesis",
     title: "thesis",
     content: {
-      text: "autonomous + on-demand gives you agentic delivery. agentic delivery at scale is the physical internet — goods moving as freely as information. i'm laying its rails.",
+      text: "creating the rails for autonomous, agentic delivery — goods on command.",
     },
     size: { width: 560, height: 300 },
   },
