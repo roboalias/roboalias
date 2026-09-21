@@ -40,7 +40,10 @@ const desktopItems = [
     label: "thesis",
     title: "thesis",
     content: {
-      text: "the digital internet moves bits. the physical internet will move atoms on command. i'm laying its rails.",
+      text: [
+        "we are witnessing the birth of the physical internet, where goods move as freely as information.",
+        "commanded, not scheduled. moved by agents, not hands.",
+      ],
     },
     size: { width: 560, height: 300 },
   },
