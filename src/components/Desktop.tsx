@@ -40,7 +40,7 @@ const desktopItems = [
     label: "thesis",
     title: "thesis",
     content: {
-      text: "one internet moves bits. the next moves atoms. the physical internet — autonomous, agentic, on command.",
+      text: "the digital internet moves bits. the physical internet will move atoms on command. i'm laying its rails.",
     },
     size: { width: 560, height: 300 },
   },
