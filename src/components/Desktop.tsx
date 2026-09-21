@@ -40,10 +40,7 @@ const desktopItems = [
     label: "thesis",
     title: "thesis",
     content: {
-      text: [
-        "we are witnessing the birth of the physical internet, where goods move as freely as information.",
-        "commanded, not scheduled. moved by agents, not hands.",
-      ],
+      text: "we are laying the rails of the physical internet, where goods move as freely as information and autonomous agents deliver anything on command.",
     },
     size: { width: 560, height: 300 },
   },
