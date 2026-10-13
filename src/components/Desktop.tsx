@@ -378,6 +378,13 @@ const Desktop = ({ onSleep, onRestart }: DesktopProps) => {
     }
   }, [infected, openWindow]);
 
+  // GitHub is open by default on desktop; mobile windows are full-screen, so skip there
+  useEffect(() => {
+    if (window.innerWidth < 768) return;
+    const gh = desktopItems.find((d) => d.id === "github")!;
+    openWindow(gh.id, gh.title, gh.size, { x: window.innerWidth - 250, y: 16 }, gh.iconName);
+  }, [openWindow]);
+
   const renderInline = (text: string) => {
     const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g).filter(Boolean);
     return parts.map((part, i) => {
